@@ -130,13 +130,12 @@ a {
 }
 
 .sm-link {
-  font-size: 3.6rem;
-  color: var(--light-color);
-  transition: color 0.5s, transform 0.5s;
+  filter: invert(0.5);
+  transition: invert 0.5s, transform 0.5s;
 }
 
 .sm-link:hover {
-  color: #999;
+  filter: invert(0.25);
   transform: translateY(-3px);
 }
 
@@ -765,6 +764,10 @@ it easier to create margins in between */
   }
 
   .hamburger-menu {
+    background: url(./images/menu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
     display: flex;
     width: 5rem;
     height: 5rem;
@@ -789,6 +792,10 @@ it easier to create margins in between */
 
   .is-open .hamburger-menu {
     transform: translateX(21rem);
+    background: url(./images/close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
   }
 
   .is-open .close {

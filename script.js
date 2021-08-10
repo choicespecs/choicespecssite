@@ -1,11 +1,9 @@
 const bodyElement = document.querySelector('body');
 const menuToggle = document.querySelector('.hamburger-menu');
-const heroElement = document.querySelector('.hero');
 const navList = document.querySelector('.nav-list');
 
 menuToggle.addEventListener('click', function(){
     bodyElement.classList.toggle('is-open');
-    heroElement.classList.add('is-open');
 });
 
 navList.addEventListener('click', function(e){
