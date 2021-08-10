@@ -49,9 +49,9 @@
             <span>Follow me on</span>
             <div class="social-media">
                 <!--Put social media link-->
-                <a href="#" class="sm-link"><i class="ion-social-instagram"></i></a>
-                <a href="#" class="sm-link"><i class="ion-social-twitter"></i></a>
-                <a href="#" class="sm-link"><i class="ion-social-linkedin"></i></a>
+                <a href="https://instagram.com/choice.specs" class="sm-link"><i class="ion-social-instagram"></i></a>
+                <a href="https://twitter.com/choicespecstwit" class="sm-link"><i class="ion-social-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/christophermlee2" class="sm-link"><i class="ion-social-linkedin"></i></a>
             </div>
         </div>
 
@@ -84,7 +84,7 @@
                         <p>
                             Experience in everything in front-end to back-end development. I can do everything from developing websites to web apps from conception to full development. I am always seeking new opportunities to both grow and learn within the field. If interested, feel free to reach out!
                         </p>
-                        <a href="#" class="btn cta-btn">Hire Me</a>
+                        <a href="#contact" class="btn cta-btn">Hire Me</a>
 
                     </div>
                 </div>
@@ -275,15 +275,14 @@
                 </div>
 
                 <div class="contact-info-wrapper">
-                    <form action="" class="contact-form">
-                        <input type="text" class="input" placeholder="Full name" required>
-                        <input type="email" class="input" placeholder="Email address" required>
-                        <input type="text" class="input" placeholder="Subject" required>
-                        <textarea rows="7" placeholder="Message" required></textarea>
+                    <form action="https://formspree.io/f/myylnqlg" class="contact-form" method="POST" id="my-form">
+                        <input type="text" class="input" placeholder="Full name" name="name" required>
+                        <input type="email" class="input" placeholder="Email address" name="email" required>
+                        <input type="text" class="input" placeholder="Subject" name="subject" required>
+                        <textarea rows="7" placeholder="Message" name="message" required></textarea>
                         <button class="btn btn-blue" type="submit">Send Message</button>
                     </form>
-
-
+                    <div id="my-form-status"></div>
                 </div>
             </div>
         </section>

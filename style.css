@@ -693,6 +693,7 @@ it easier to create margins in between */
 .contact-info-wrapper {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .contact-info {
@@ -884,5 +885,41 @@ it easier to create margins in between */
 @media screen and (min-width: 1925px) {
   html {
     font-size: 75%;
+  }
+}
+
+#my-form-status {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+#my-form-status.success {
+  background-color: rgb(211, 250, 153);
+  animation: status 4s ease forwards;
+}
+
+#my-form-status.error {
+  background-color: rgb(250, 129, 92);
+  color: white;
+  animation: status 4s ease forwards;
+}
+
+@keyframes status {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
   }
 }
