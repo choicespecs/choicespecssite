@@ -61,15 +61,10 @@ a {
   line-height: 1.5;
 }
 
-.intro-heading {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.intro-subhead {
-  font-size: 1.4rem;
-  letter-spacing: 1px;
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .nav-list {
