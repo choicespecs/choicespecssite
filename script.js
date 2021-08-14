@@ -1,6 +1,20 @@
 const bodyElement = document.querySelector('body');
 const menuToggle = document.querySelector('.hamburger-menu');
 const navList = document.querySelector('.nav-list');
+const links = document.querySelectorAll('.nav-list a')
+
+for (const link of links) {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        const offsetTop = document.querySelector(href).offsetTop;
+
+        scroll({
+            top:offsetTop,
+            behavior:"smooth"
+        });
+    })
+}
 
 menuToggle.addEventListener('click', function(){
     bodyElement.classList.toggle('is-open');
