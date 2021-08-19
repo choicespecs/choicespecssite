@@ -607,7 +607,7 @@ it easier to create margins in between */
 
 .grid-item {
   display: inline-block;
-  min-height: 35rem;
+  min-height: 30rem;
   position: relative;
   overflow: hidden;
   transition: transform 0.4s;
