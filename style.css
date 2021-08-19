@@ -606,9 +606,15 @@ it easier to create margins in between */
 }
 
 .my-portfolio .grid-item {
+  display: inline-block;
   min-height: 35rem;
   position: relative;
   overflow: hidden;
+  transition: transform 0.4s;
+}
+
+.my-expertise .grid-item:hover {
+  transform: scale(1.05) rotate(0.01deg);
 }
 
 .portfolio-item-image {
