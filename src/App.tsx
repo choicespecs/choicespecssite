@@ -5,12 +5,13 @@ import Portfolio from "./component/portfolio/Portfolio";
 import Contact from "./component/contact/Contact";
 import { useState, useEffect } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
   useLocation,
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 import styled from "styled-components";
 import axios from "axios";
 
