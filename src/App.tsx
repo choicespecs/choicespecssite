@@ -62,7 +62,7 @@ export default function App() {
       console.log("I just sent a request");
       axios
         .get(
-          `https://graph.instagram.com/me/media?fields=media_url&limit=1&access_token=IGQVJXcE4zWkZA5d3lJcEYtVEs0M1VkLUgybU1BT0NkeEFDWkpGUzE0UmpTWmdyaW5NNjFXTFNaVXdIc29ydHlDbUlGWDNHSHE5UkN6WGFSejFlNFNjTEZATMGtmNWEzNFlsZAGxxRUVDVHdKTVBNTkoxWAZDZD`
+          `https://graph.instagram.com/me/media?fields=media_url&limit=1&access_token=IGQVJWcFRwQ2F4SGVyRy1jYlZA3QVdzbWJWMUdDSlFBN0lGSmdobUpRWE0wQnktSWJWNVplVV9pWXduQ19vcVhwUHNBUml0RUxUX1FZAVGRBN1BUWjBzNjdnbnhrLXB1TFdscHVjSEdvS29FQTE2RkdtLQZDZD`
         )
         .then((resp) => {
           console.log("I got a request..");

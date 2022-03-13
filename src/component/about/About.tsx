@@ -69,9 +69,9 @@ export default function About(props: AboutProps) {
               <Link to="/contact" className="btn cta-btn contact">
                 Contact Me
               </Link>
-              <Link to="/skills" className="btn cta-btn">
+              <a href="./files/Christopher Lee CS Resume.pdf" className="btn cta-btn">
                 Resume
-              </Link>
+              </a>
             </div>
           </div>
           <div className="intro-picture">
