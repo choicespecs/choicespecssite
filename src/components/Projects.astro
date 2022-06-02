@@ -79,8 +79,8 @@ if (status === 200) {
         margin-bottom: 8px;
     }
 
-    .projects-title {
-        z-index: -1;
+    .nav-open .projects-title {
+        display: none;
     }
 
     .project-title {
@@ -202,10 +202,9 @@ if (status === 200) {
 <section id="projects">
     <header class="projects-title">
         <h1>Projects</h1>
-        <span class="github-wrapper">
-            <h5>More at:</h5>
-            <a class="github-link" href={githubLink}><img src={githubLogo} alt=""></a>
-        </span>
+        <a class="github-link" href={githubLink}>
+            <img src={githubLogo} alt="">
+        </a>
     </header>
     <div class="projects-wrapper">
         <div class="desktop-projects-list">
