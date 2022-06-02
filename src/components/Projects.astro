@@ -1,0 +1,253 @@
+---
+import projects from '../data/projects.json';
+
+const githubLink = 'https://github.com/christophermlee2';
+const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/github.png';
+
+const response = await fetch(`https://api.github.com/user/repos?sort=updated&visibility=public&per_page=3`, {
+    headers: {
+        'Authorization': 'token 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'
+    }
+});
+let data = projects;
+const status = response.status;
+if (status === 200) {
+    data = await response.json();
+}
+
+---
+
+<style>
+    #projects {
+        margin: 2em auto;
+        width: 90%;
+        height: calc(100vh - calc(100vh - 100%) - 100px);
+        -webkit-box-shadow: -8px 4px 15px 0px rgba(0, 0, 0, 0.35);
+        box-shadow: -8px 4px 15px 0px rgba(0, 0, 0, 0.35);
+        border-radius: 12px;
+        border: 1px solid black;
+        scroll-margin-top: 100px;
+    }
+
+    .projects-title {
+        padding-top: 1em;
+        padding-bottom: 8px;
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: fit-content;
+        width: 90%;
+    }
+
+    .projects-title::after {
+        content: '';
+        width: 100%;
+        border-bottom: solid 1px black;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .github-link img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .projects-wrapper {
+        padding: 0.7em;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .projects-wrapper>* {
+        margin-top: 0.7em;
+        margin-bottom: 0.7em;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    .project-desc {
+        line-height: 1.5;
+        font-weight: 100;
+        margin-bottom: 8px;
+    }
+
+    .projects-title {
+        z-index: -1;
+    }
+
+    .project-title {
+        text-decoration: underline;
+        margin-bottom: 8px;
+    }
+
+    .desktop-updated-project,
+    .desktop-projects-list {
+        display: none;
+    }
+
+    .github-wrapper {
+        text-align: center;
+    }
+
+    .github-wrapper h5 {
+        margin-bottom: 4px;
+    }
+
+    .project a {
+        letter-spacing: 2px;
+    }
+
+    @media screen and (min-width: 941px) {
+        .projects-wrapper>.project {
+            display: none;
+        }
+
+        .desktop-projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+
+        .desktop-project-info-wrapper {
+            overflow: hidden;
+            display: flex;
+            height: 90%;
+            flex-direction: column;
+            gap: 8px;
+            border: 1px solid black;
+            -webkit-box-shadow: 5px -5px 40px 13px rgba(0, 0, 0, 0.11);
+            box-shadow: 5px -5px 40px 13px rgba(0, 0, 0, 0.11);
+            transition: transform 0.5s;
+            background-color: white;
+            border-radius: 1em;
+        }
+
+        .desktop-project-info-wrapper:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .project-title {
+            text-align: center;
+            margin-bottom: 1em;
+            font-size: 20px;
+        }
+
+        .project-desc {
+            font-size: 16px;
+        }
+
+        .project-tags {
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        .desktop-project-information {
+            padding: 1em;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-flow: auto;
+            grid-auto-columns: 1fr;
+            height: fit-content;
+            width: 100%;
+            height: fit-content;
+            background-color: rgba(109, 109, 109, 0.2);
+        }
+
+        .desktop-info {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .desktop-info h5 {
+            font-size: 16px;
+        }
+
+        .desktop-info p {
+            font-size: 14px;
+        }
+
+        .project-tag-wrapper {
+            padding: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .project-desc {
+            padding: 2em;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .desktop-projects-list {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            grid-auto-flow: auto;
+            grid-auto-columns: 1fr;
+            gap: 2em;
+        }
+    }
+</style>
+
+<section id="projects">
+    <header class="projects-title">
+        <h1>Projects</h1>
+        <span class="github-wrapper">
+            <h5>More at:</h5>
+            <a class="github-link" href={githubLink}><img src={githubLogo} alt=""></a>
+        </span>
+    </header>
+    <div class="projects-wrapper">
+        <div class="desktop-projects-list">
+            {data.map(obj => (
+            <section class="desktop-project">
+                <h1 class="project-title">{obj.name.toString()}</h1>
+                <a href={obj.html_url.toString()} class="desktop-project-info-wrapper">
+                    <header class="desktop-project-information">
+                        <div class="desktop-info">
+                            <h5 class="desktop-info-title">Language:</h5>
+                            <p>{obj.language.toString()}</p>
+                        </div>
+                        <div class="desktop-info">
+                            <h5 class="desktop-info-title">Created:</h5>
+                            <p>{obj.created_at.toString().substring(0, 10)}</p>
+                        </div>
+                        <div class="desktop-info">
+                            <div class="desktop-info-title"> Updated: </div>
+                            <p>{obj.updated_at.toString().substring(0, 10)}</p>
+                        </div>
+                    </header>
+                    <p class="project-desc">{obj.description.toString()}</p>
+                    <span class="project-tag-wrapper">
+                        <h5>Tags:</h5>
+                        <ul class="project-tags">
+                            {obj.topics.map(topic => (
+                            <li>{topic}</li>
+                            ))}
+                        </ul>
+                    </span>
+                </a>
+            </section>
+            ))}
+        </div>
+        {data.map(obj => (
+        <section class="project">
+            <h1 class="project-title">{obj.name.toString()}</h1>
+            <article>
+                <p class="project-desc">{obj.description.toString()}</p>
+                <a href={obj.html_url.toString()}>Visit Repo</a>
+            </article>
+        </section>
+        ))}
+    </div>
+</section>

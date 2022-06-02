@@ -1,0 +1,54 @@
+---
+import social from '../data/social.json';
+const logo = "https://choicespecs-website.s3.us-east-2.amazonaws.com/Choice+Specs+Logo.png";
+---
+
+<style>
+    footer {
+        height: fit-content;
+        padding: 2em;
+        width: 100%;
+        background-color: var(--side-color);
+        display: flex;
+        flex-direction: row;
+    }
+
+    .social-media-wrapper {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .img-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 2em;
+    }
+</style>
+
+<footer>
+    <div class="social-media-wrapper">
+        <h2>Follow me:</h2>
+        <ul>
+            {social.map(obj => (
+            <li><a href={obj.html_url}>{obj.name}</a></li>
+            ))}
+        </ul>
+    </div>
+    <div class="img-wrapper">
+        <img src={logo} alt="website-logo">
+    </div>
+</footer>

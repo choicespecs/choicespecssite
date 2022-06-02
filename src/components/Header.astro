@@ -1,0 +1,254 @@
+---
+import social from '../data/social.json';
+---
+
+<style>
+    #home-header {
+        margin-top: 100px;
+        width: 100%;
+        height: calc(100vh - calc(100vh - 100%) - 100px);
+        display: flex;
+        flex-direction: column;
+        scroll-margin-top: 100px;
+    }
+
+    .header-title {
+        font-weight: 700;
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    #short-bio {
+        padding: 14px;
+    }
+
+    #short-bio p {
+        font-size: 1em;
+        margin: 1em 0;
+        width: 25ch;
+    }
+
+    #home-button-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 2em;
+    }
+
+    #home-button-group button {
+        width: 90px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    .youtube-wrapper {
+        margin: 2em 0;
+        display: flex;
+        width: 100%;
+        height: 300px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    button {
+        background-color: var(--button-color);
+    }
+
+    #intro {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        margin: 0 auto;
+        width: 70%;
+    }
+
+    .home-buttons {
+        background-color: var(--button-color);
+        padding: 11px 13px;
+        letter-spacing: 2px;
+        font-size: 16px;
+    }
+
+    .intro-title {
+        display: none;
+    }
+
+    .social-media-wrapper {
+        display: none;
+    }
+
+    @media screen and (min-width: 461px) {
+        .home-buttons {
+            padding: 1rem 2rem;
+        }
+
+        #short-bio p {
+            width: 35ch;
+        }
+    }
+
+    @media screen and (min-width: 641px) {
+        .social-media-wrapper {
+            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 12px;
+        }
+
+        .social-media-wrapper span {
+            font-size: 1em;
+        }
+
+        .menu-social-media {
+            display: flex;
+            gap: 2em;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .menu-social-media img {
+            width: 30px;
+            height: 30px;
+            filter: invert(0.25);
+        }
+
+        .header-title {
+            display: none;
+        }
+
+        .intro-title {
+            display: block;
+            text-align: center;
+            margin: 2em 0;
+        }
+
+        #home-header {
+            margin-top: 70px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 90vh;
+            flex-direction: row-reverse;
+        }
+
+        .youtube-wrapper {
+            width: 50%;
+            height: 400px;
+        }
+
+        .intro-info-wrapper {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #short-bio p {
+            width: 25ch;
+        }
+
+        .home-buttons {
+            padding: 12px 10px;
+        }
+
+        #home-button-group {
+            padding: 1em;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    @media screen and (min-width: 941px) {
+        iframe {
+            border: 1px solid black;
+        }
+
+        .menu-social-media img {
+            filter: invert(0.5);
+            transition: transform 0.5s;
+        }
+
+        #intro {
+            width: 50%;
+        }
+
+        #short-bio p {
+            width: 100%;
+        }
+
+        #home-header {
+            gap: 2em;
+        }
+
+        .youtube-wrapper {
+            padding: 3em;
+            height: 100%;
+        }
+
+        #home-button-group {
+            gap: 3em;
+            justify-content: center;
+        }
+
+        #home-button-group li {
+            transition: transform 0.5s;
+        }
+
+        .menu-social-media img:hover {
+            filter: invert(0);
+            transform: scale(1.2);
+        }
+
+        #home-button-group li:hover {
+            transform: scale(1.2);
+        }
+    }
+</style>
+
+<section id="home-header">
+    <header class="header-title">
+        <h2>Full Stack Developer, <br> & Software Engineer</h2>
+    </header>
+    <div class="youtube-wrapper">
+        <iframe src="https://www.youtube.com/embed/Doiu2iib92U?showinfo=0&modestbranding=1&rel=0&loop=1&autohide=1"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    <section class="intro-info-wrapper">
+        <header class="intro-title">
+            <h2>Full Stack Developer, <br> & Software Engineer</h2>
+        </header>
+        <section id="intro">
+            <article id="short-bio">
+                <p>Hi, my name is Chris</p>
+                <p>I can make <b>websites</b>, <b> web applications</b>, and work on many other areas in software
+                    development. I
+                    consider
+                    myself a software generalist</p>
+                <p>I always welcome opportunities to network or to collaborate with others feel free to reach out </p>
+            </article>
+            <ul id="home-button-group">
+                <li><a class="home-buttons" href="./assets/resume.pdf">RESUME</a></li>
+                <li><a class="home-buttons" href="#contact">CONTACT</a></li>
+            </ul>
+        </section>
+        <div class="social-media-wrapper">
+            <span>Follow me on</span>
+            <nav>
+                <ul class="menu-social-media">
+                    {social.map(obj => (
+                    <li><a href={obj.html_url}><img src={obj.img_url} alt={obj.name}></a></li>
+                    ))}
+                </ul>
+            </nav>
+        </div>
+    </section>
+</section>

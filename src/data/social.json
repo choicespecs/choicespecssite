@@ -1,0 +1,17 @@
+[
+    {
+        "name" : "Github",
+        "img_url" : "https://choicespecs-website.s3.us-east-2.amazonaws.com/github.png",
+        "html_url" : "https://github.com/christophermlee2"
+    },
+    {
+        "name" : "YouTube",
+        "img_url" : "https://choicespecs-website.s3.us-east-2.amazonaws.com/youtubelogo.png",
+        "html_url" : "https://www.youtube.com/channel/UCYeqFikajvHjnxEV1bNW6iA"
+    },
+    {
+        "name" : "LinkedIn",
+        "img_url" : "https://choicespecs-website.s3.us-east-2.amazonaws.com/linkedin.png",
+        "html_url" : "https://www.linkedin.com/in/christophermlee2"
+    }
+]
