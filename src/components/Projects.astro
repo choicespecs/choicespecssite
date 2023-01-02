@@ -4,16 +4,17 @@ import projects from '../data/projects.json';
 const githubLink = 'https://github.com/choicespecs';
 const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/github.png';
 
-const response = await fetch(`https://api.github.com/user/repos?sort=updated&visibility=public&per_page=3`, {
-    headers: {
-        'Authorization': 'token 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'
-    }
-});
-let data = await response.json();
-const status = response.status;
-if (status !== 200) {
-    data = projects;
-}
+let data = projects;
+// const response = await fetch(`https://api.github.com/user/repos?sort=updated&visibility=public&per_page=3`, {
+//     headers: {
+//         'Authorization': 'token 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'
+//     }
+// });
+// let data = await response.json();
+// const status = response.status;
+// if (status !== 200) {
+//     data = projects;
+// }
 
 ---
 
