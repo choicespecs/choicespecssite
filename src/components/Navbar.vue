@@ -6,10 +6,9 @@
             </div>
             <nav>
                 <ul class="nav-menu-list">
-                    <li><h4><a href="#home-header">Home | Resume</a></h4></li>
-                    <li><h4><a href="#skills">Skills</a></h4></li>
-                    <li><h4><a href="#projects">Projects</a></h4></li>
-                    <li><h4><a href="#contact">Contact Me</a></h4></li>
+                    <li><h4><a href="#home-header">About Me</a></h4></li>
+                    <!-- <li><h4><a href="#skills">Skills</a></h4></li>
+                    <li><h4><a href="#projects">Projects</a></h4></li> -->
                 </ul>
             </nav>
             <aside class="hamburger-wrapper">
@@ -23,10 +22,9 @@
             </header>
             <nav class="mobile-menu-list">
                 <ul>
-                    <li><h1><a @click="toggleMobileMenu" href="#home-header">Home | Resume</a> </h1></li>
-                    <li><h1><a @click="toggleMobileMenu" href="#skills">Skills</a></h1></li>
-                    <li><h1><a @click="toggleMobileMenu" href="#projects">Projects</a></h1></li>
-                    <li><h1><a @click="toggleMobileMenu" href="#contact">Contact Me</a></h1></li>
+                    <li><h1><a @click="toggleMobileMenu" href="#home-header">About Me</a> </h1></li>
+                    <!-- <li><h1><a @click="toggleMobileMenu" href="#skills">Skills</a></h1></li>
+                    <li><h1><a @click="toggleMobileMenu" href="#projects">Projects</a></h1></li> -->
                 </ul>
             </nav>
             <section class="social-media-wrapper">
