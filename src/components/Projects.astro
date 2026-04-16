@@ -369,8 +369,8 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
 
         const cards = Array.from(grid.querySelectorAll('.project-card'));
         const nav = document.getElementById('carousel-nav');
-        const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
-        const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
         const dotsContainer = document.getElementById('carousel-dots');
 
         if (!nav || !prevBtn || !nextBtn || !dotsContainer) return;
