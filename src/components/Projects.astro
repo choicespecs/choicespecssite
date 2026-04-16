@@ -3,6 +3,8 @@ import projects from '../data/projects.json';
 
 const githubLink = 'https://github.com/choicespecs';
 const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/github.png';
+
+const languages = ['All', ...Array.from(new Set(projects.map(p => p.language))).sort()];
 ---
 
 <style>
@@ -45,6 +47,35 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
         width: 28px;
         height: 28px;
         display: block;
+    }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        padding: 0.8em 1em 0;
+    }
+
+    .filter-btn {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background: white;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    .filter-btn:hover {
+        background-color: rgba(0, 0, 0, 0.06);
+    }
+
+    .filter-btn.active {
+        background-color: var(--button-color);
+        border-color: var(--button-color);
     }
 
     /* ── Card grid ── */
@@ -155,6 +186,21 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
         color: black !important;
     }
 
+    /* ── Empty state ── */
+    .no-results {
+        display: none;
+        padding: 2em;
+        text-align: center;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.45);
+        font-size: 0.95em;
+        letter-spacing: 0.5px;
+    }
+
+    .no-results.visible {
+        display: block;
+    }
+
     /* ── Carousel navigation ── */
     .carousel-nav {
         display: none;
@@ -236,6 +282,10 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
             left: 1.5em;
         }
 
+        .filter-bar {
+            padding: 0.8em 1.5em 0;
+        }
+
         .projects-grid {
             padding: 1.2em 1.5em;
             grid-template-columns: repeat(2, 1fr);
@@ -274,6 +324,16 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
         .github-link img {
             width: 32px;
             height: 32px;
+        }
+
+        .filter-bar {
+            padding: 1em 2em 0;
+            gap: 0.6em;
+        }
+
+        .filter-btn {
+            font-size: 12px;
+            padding: 7px 16px;
         }
 
         .projects-grid {
@@ -330,9 +390,23 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
         </a>
     </header>
 
+    <div class="filter-bar" id="filter-bar">
+        {languages.map((lang) => (
+            <button
+                class={'filter-btn' + (lang === 'All' ? ' active' : '')}
+                data-filter={lang}
+            >{lang}</button>
+        ))}
+    </div>
+
     <div class="projects-grid" id="projects-grid">
         {projects.map((obj, i) => (
-            <article class="project-card" data-index={String(i)} {...(i >= 3 ? { 'data-hidden': '' } : {})}>
+            <article
+                class="project-card"
+                data-index={String(i)}
+                data-language={obj.language}
+                {...(i >= 3 ? { 'data-hidden': '' } : {})}
+            >
                 <header class="card-header">
                     <span class="card-language">{obj.language}</span>
                 </header>
@@ -355,6 +429,8 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
         ))}
     </div>
 
+    <p class="no-results" id="no-results">No projects found for this language.</p>
+
     <div class="carousel-nav" id="carousel-nav">
         <button class="carousel-btn" id="prev-btn" aria-label="Previous page">&#8249;</button>
         <div class="carousel-dots" id="carousel-dots"></div>
@@ -363,58 +439,73 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
 </section>
 
 <script>
-    function initCarousel() {
-        const grid = document.getElementById('projects-grid');
+    function initProjects() {
+        var grid = document.getElementById('projects-grid');
         if (!grid) return;
 
-        const cards = Array.from(grid.querySelectorAll('.project-card'));
-        const nav = document.getElementById('carousel-nav');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const dotsContainer = document.getElementById('carousel-dots');
+        var cards = Array.from(grid.querySelectorAll('.project-card'));
+        var nav = document.getElementById('carousel-nav');
+        var prevBtn = document.getElementById('prev-btn');
+        var nextBtn = document.getElementById('next-btn');
+        var dotsContainer = document.getElementById('carousel-dots');
+        var noResults = document.getElementById('no-results');
+        var filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
 
-        if (!nav || !prevBtn || !nextBtn || !dotsContainer) return;
+        if (!nav || !prevBtn || !nextBtn || !dotsContainer || !noResults) return;
 
-        let currentPage = 0;
+        var currentPage = 0;
+        var activeFilter = 'All';
 
         function itemsPerPage() {
-            if (window.innerWidth < 641) return 1;   // mobile:  1 per page
-            if (window.innerWidth < 941) return 4;   // tablet:  2×2 grid
-            return 3;                                  // desktop: 3-column grid
+            if (window.innerWidth < 641) return 1;
+            if (window.innerWidth < 941) return 4;
+            return 3;
         }
 
-        function totalPages() {
-            return Math.ceil(cards.length / itemsPerPage());
+        function eligibleCards() {
+            if (activeFilter === 'All') return cards;
+            return cards.filter(function(card) {
+                return card.getAttribute('data-language') === activeFilter;
+            });
         }
 
         function render() {
-            const ipp = itemsPerPage();
-            const pages = totalPages();
-            const start = currentPage * ipp;
-            const end = start + ipp;
+            var eligible = eligibleCards();
+            var ipp = itemsPerPage();
+            var pages = Math.ceil(eligible.length / ipp);
+            var start = currentPage * ipp;
+            var visible = eligible.slice(start, start + ipp);
 
-            cards.forEach((card, i) => {
-                if (i >= start && i < end) {
-                    card.removeAttribute('data-hidden');
-                } else {
-                    card.setAttribute('data-hidden', '');
-                }
+            // Hide all cards, then show only the current page of eligible ones
+            cards.forEach(function(card) {
+                card.setAttribute('data-hidden', '');
+            });
+            visible.forEach(function(card) {
+                card.removeAttribute('data-hidden');
             });
 
+            // Empty state
+            if (eligible.length === 0) {
+                noResults.classList.add('visible');
+            } else {
+                noResults.classList.remove('visible');
+            }
+
+            // Carousel nav
             prevBtn.disabled = currentPage === 0;
             nextBtn.disabled = currentPage >= pages - 1;
 
-            // Rebuild dots
             dotsContainer.innerHTML = '';
-            for (let i = 0; i < pages; i++) {
-                const dot = document.createElement('button');
+            for (var i = 0; i < pages; i++) {
+                var dot = document.createElement('button');
                 dot.className = 'dot' + (i === currentPage ? ' active' : '');
-                dot.setAttribute('aria-label', `Page ${i + 1}`);
-                dot.addEventListener('click', () => { currentPage = i; render(); });
+                dot.setAttribute('aria-label', 'Page ' + (i + 1));
+                (function(page) {
+                    dot.addEventListener('click', function() { currentPage = page; render(); });
+                })(i);
                 dotsContainer.appendChild(dot);
             }
 
-            // Only show nav when multiple pages exist
             if (pages > 1) {
                 nav.classList.add('visible');
             } else {
@@ -422,18 +513,30 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
             }
         }
 
-        prevBtn.addEventListener('click', () => {
+        // Filter buttons
+        filterBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                activeFilter = btn.getAttribute('data-filter');
+                currentPage = 0;
+                filterBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                render();
+            });
+        });
+
+        prevBtn.addEventListener('click', function() {
             if (currentPage > 0) { currentPage--; render(); }
         });
 
-        nextBtn.addEventListener('click', () => {
-            if (currentPage < totalPages() - 1) { currentPage++; render(); }
+        nextBtn.addEventListener('click', function() {
+            var pages = Math.ceil(eligibleCards().length / itemsPerPage());
+            if (currentPage < pages - 1) { currentPage++; render(); }
         });
 
-        // Reset to page 0 whenever crossing a breakpoint
-        let lastIpp = itemsPerPage();
-        window.addEventListener('resize', () => {
-            const newIpp = itemsPerPage();
+        // Reset on breakpoint change
+        var lastIpp = itemsPerPage();
+        window.addEventListener('resize', function() {
+            var newIpp = itemsPerPage();
             if (newIpp !== lastIpp) {
                 lastIpp = newIpp;
                 currentPage = 0;
@@ -444,5 +547,5 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
         render();
     }
 
-    document.addEventListener('DOMContentLoaded', initCarousel);
+    document.addEventListener('DOMContentLoaded', initProjects);
 </script>
