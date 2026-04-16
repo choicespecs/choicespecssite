@@ -1,37 +1,26 @@
 [
   {
-    "name": "sfind",
-    "html_url": "https://github.com/christophermlee2/sfindproject",
-    "description": "This function is similar to find. It will print out the directories and files. However; it will also take arguments to search for specific substrings and types.",
-    "created_at": "2021-08-15T05:07:59Z",
-    "updated_at": "2022-05-30T07:05:21Z",
-    "language": "C",
-    "topics": ["c", "linux", "unix"]
-  },
-  {
-    "name": "cityActivityTracker",
-    "html_url": "https://github.com/christophermlee2/cityActivityTracker",
-    "description": "City Activity Tracker which utilizes html, php, mysql, and JS to run.",
-    "created_at": "2021-11-09T14:31:00Z",
-    "updated_at": "2022-05-23T05:57:33Z",
-    "language": "PHP",
-    "topics": ["javascript", "php", "web-application", "webapp"]
-  },
-  {
     "name": "TypescriptDesignPatterns",
-    "html_url": "https://github.com/christophermlee2/TypescriptDesignPatterns",
-    "description": "Collection of different design patterns implemented within typescript. These are code examples from a collection of youtube videos located on my YouTube channel.",
-    "created_at": "2021-12-30T02:56:40Z",
-    "updated_at": "2022-05-23T05:18:28Z",
+    "html_url": "https://github.com/choicespecs/TypescriptDesignPatterns",
+    "live_url": "https://choicespecs.github.io/TypescriptDesignPatterns/",
+    "description": "Interactive reference covering 21 design patterns across Behavioral, Creational, and Structural categories — all implemented in TypeScript with live demos and search.",
     "language": "TypeScript",
-    "topics": [
-      "design-pattern",
-      "design-patterns",
-      "html-css-javascript",
-      "javascript",
-      "pattern",
-      "patterns",
-      "typescript"
-    ]
+    "topics": ["design-patterns", "typescript", "behavioral", "creational", "structural"]
+  },
+  {
+    "name": "xml-toolbox",
+    "html_url": "https://github.com/choicespecs/xml-toolbox",
+    "live_url": "https://choicespecs.github.io/xml-toolbox/",
+    "description": "A browser-based tool for reading and analyzing XML files.",
+    "language": "TypeScript",
+    "topics": ["xml", "toolbox", "web-app"]
+  },
+  {
+    "name": "json-toolbox",
+    "html_url": "https://github.com/choicespecs/json-toolbox",
+    "live_url": "https://choicespecs.github.io/json-toolbox/",
+    "description": "A fast, browser-based toolkit for working with JSON — compare documents, analyze structures, visualize data as interactive graphs, and convert between formats without uploading data.",
+    "language": "TypeScript",
+    "topics": ["json", "react", "typescript", "vite"]
   }
 ]
