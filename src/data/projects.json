@@ -22,5 +22,40 @@
     "description": "A fast, browser-based toolkit for working with JSON — compare documents, analyze structures, visualize data as interactive graphs, and convert between formats without uploading data.",
     "language": "TypeScript",
     "topics": ["json", "react", "typescript", "vite"]
+  },
+  {
+    "name": "user-service-microservice",
+    "html_url": "https://github.com/choicespecs/user-service-microservice",
+    "description": "A simple user service microservice for self studying",
+    "language": "Java",
+    "topics": ["microservices", "java", "spring-boot", "docker"]
+  },
+  {
+    "name": "java-api-study-demo",
+    "html_url": "https://github.com/choicespecs/java-api-study-demo",
+    "description": "Interactive reference site for studying Java API development also uses Spring Boot for reference",
+    "language": "Java",
+    "topics": ["java", "api", "spring-boot"]
+  },
+  {
+    "name": "java-aws-sam-application",
+    "html_url": "https://github.com/choicespecs/java-aws-sam-application",
+    "description": "A demo project for studying Java development with AWS SAM",
+    "language": "Java",
+    "topics": ["java", "aws", "serverless", "spring-boot"]
+  },
+  {
+    "name": "java-webhook-application",
+    "html_url": "https://github.com/choicespecs/java-webhook-application",
+    "description": "A demo project for studying Java development with webhooks",
+    "language": "Java",
+    "topics": ["java", "webhooks", "spring-boot"]
+  },
+  {
+    "name": "java-order-processing-system",
+    "html_url": "https://github.com/choicespecs/java-order-processing-system",
+    "description": "A demo project highlighting SAGA orchestration for order processing in Java",
+    "language": "Java",
+    "topics": ["java", "orchestration", "spring-boot"]
   }
 ]
