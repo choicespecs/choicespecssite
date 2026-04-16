@@ -18,12 +18,14 @@ Single-page Astro site deployed to GitHub Pages at `https://www.choicespecs.com`
 
 **Framework mix:** Astro handles static rendering. Vue is used for the `Navbar` (needs `client:load` for interactivity). React integration is installed but not currently used by any component.
 
+**No TypeScript in `<script>` blocks.** The Rollup version bundled with Astro 1.0.0-beta.31 parses client-side `<script>` tags as plain ES2015 JavaScript. Any TypeScript syntax — return type annotations (`: number`), type casts (`as HTMLButtonElement`), `interface`, `type`, generics — will cause a build failure. Keep all `<script>` blocks in `.astro` files pure JavaScript. TypeScript is only valid inside the frontmatter fences (`---`) of `.astro` files, which is compiled separately by Astro itself.
+
 **Data layer — edit JSON files to update content:**
-- `src/data/projects.json` — projects shown in the Projects section (fields: `name`, `html_url`, `description`, `created_at`, `updated_at`, `language`, `topics`)
+- `src/data/projects.json` — projects shown on the Projects page (fields: `name`, `html_url`, `live_url` (optional), `description`, `language`, `topics`)
 - `src/data/skills.json` — skills shown in the Skills section (separate `mobile_*` and `desktop_*` field variants for responsive display)
 - `src/data/social.json` — social links shown in the navbar mobile menu, header, and footer
 
-**Page structure (`src/pages/index.astro`):** Single route. Renders `Navbar` (Vue, client-side), `Header` (about me + YouTube embed), and `Footer`. `Skills` and `Projects` components exist and are wired to their JSON data files but are currently commented out of the page — uncomment their imports and add them to the template to re-enable them.
+**Pages:** `src/pages/index.astro` (About Me — `Navbar`, `Header`, `Footer`) and `src/pages/projects.astro` (Projects — `Navbar`, `Projects`, `Footer`). The `Skills` component exists and is wired to `skills.json` but is not currently used on any page.
 
 **Styling:** Global CSS variables in `src/styles/global.css` — `--side-color: #262626` (dark navbar/footer) and `--button-color: #F9BF3F` (yellow). Each component carries its own scoped `<style>` block with three breakpoints: mobile (default), tablet (641px), desktop (941px/1200px).
 

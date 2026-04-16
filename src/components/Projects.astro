@@ -377,13 +377,13 @@ const githubLogo = 'https://choicespecs-website.s3.us-east-2.amazonaws.com/githu
 
         let currentPage = 0;
 
-        function itemsPerPage(): number {
+        function itemsPerPage() {
             if (window.innerWidth < 641) return 1;   // mobile:  1 per page
             if (window.innerWidth < 941) return 4;   // tablet:  2×2 grid
             return 3;                                  // desktop: 3-column grid
         }
 
-        function totalPages(): number {
+        function totalPages() {
             return Math.ceil(cards.length / itemsPerPage());
         }
 
