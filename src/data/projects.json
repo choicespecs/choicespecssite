@@ -16,6 +16,14 @@
     "topics": ["xml", "toolbox", "web-app"]
   },
   {
+    "name": "api-study-demo-typescript",
+    "html_url": "https://github.com/choicespecs/api-study-demo-typescript",
+    "live_url": "https://choicespecs.github.io/api-study-demo-typescript/",
+    "description": "An interactive reference site for studying API development.",
+    "language": "TypeScript",
+    "topics": ["api", "typescript", "interactive"]
+  },
+  {
     "name": "json-toolbox",
     "html_url": "https://github.com/choicespecs/json-toolbox",
     "live_url": "https://choicespecs.github.io/json-toolbox/",
