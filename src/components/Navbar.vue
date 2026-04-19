@@ -8,6 +8,7 @@
                 <ul class="nav-menu-list">
                     <li><h4><a href="/">About Me</a></h4></li>
                     <li><h4><a href="/projects">Projects</a></h4></li>
+                    <li><h4><a href="/journal">Journal</a></h4></li>
                 </ul>
             </nav>
             <aside class="hamburger-wrapper">
@@ -23,6 +24,7 @@
                 <ul>
                     <li><h1><a @click="toggleMobileMenu" href="/">About Me</a></h1></li>
                     <li><h1><a @click="toggleMobileMenu" href="/projects">Projects</a></h1></li>
+                    <li><h1><a @click="toggleMobileMenu" href="/journal">Journal</a></h1></li>
                 </ul>
             </nav>
             <section class="social-media-wrapper">
