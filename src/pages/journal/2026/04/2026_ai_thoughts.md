@@ -1,11 +1,9 @@
 ---
 layout: ../../../../layouts/JournalPostLayout.astro
-title: "My thoughts on the future of tech"
-date: 2026-04-19
+title: "My AI Epiphany"
+date: 2026-04-22
 description: "Moving forward with AI"
 ---
-
-Some thoughts in 2026 
 
 ## Shift in approach
 
