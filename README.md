@@ -41,16 +41,6 @@ To add a project, edit [`src/data/projects.json`](src/data/projects.json):
 
 ---
 
-## Projects Featured
-
-| Project | Description | Links |
-|---|---|---|
-| TypescriptDesignPatterns | Interactive reference covering 21 design patterns (Behavioral, Creational, Structural) implemented in TypeScript | [Demo](https://choicespecs.github.io/TypescriptDesignPatterns/) · [Repo](https://github.com/choicespecs/TypescriptDesignPatterns) |
-| xml-toolbox | Browser-based tool for reading and analyzing XML files | [Demo](https://choicespecs.github.io/xml-toolbox/) · [Repo](https://github.com/choicespecs/xml-toolbox) |
-| json-toolbox | Fast, browser-based toolkit for working with JSON — compare, visualize, and convert without uploading data | [Demo](https://choicespecs.github.io/json-toolbox/) · [Repo](https://github.com/choicespecs/json-toolbox) |
-
----
-
 ## Built With
 
 - [Astro](https://astro.build) — static site framework
