@@ -165,6 +165,47 @@ const { repos, languages } = Astro.props;
         display: block;
     }
 
+    .ledger-pagination {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        padding: 0.8em 1em;
+        border-top: 1px solid var(--ledger-border);
+    }
+
+    .ledger-pagination.visible {
+        display: flex;
+    }
+
+    .page-btn {
+        font-family: var(--ledger-font-sans);
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 12px;
+        border: 1px solid var(--ledger-border);
+        border-radius: var(--ledger-radius);
+        background-color: var(--ledger-bg);
+        color: var(--ledger-text);
+        cursor: pointer;
+        transition: background-color 0.1s ease;
+    }
+
+    .page-btn:hover:not(:disabled) {
+        background-color: var(--ledger-row-hover);
+    }
+
+    .page-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+    }
+
+    .page-indicator {
+        font-family: var(--ledger-font-mono);
+        font-size: 12px;
+        color: var(--ledger-text-secondary);
+    }
+
     @media screen and (min-width: 641px) {
         .row-desc {
             font-size: 13.5px;
@@ -210,21 +251,34 @@ const { repos, languages } = Astro.props;
     </div>
 
     <p class="no-results" id="no-results">no repos found</p>
+
+    <div class="ledger-pagination" id="ledger-pagination">
+        <button class="page-btn" id="page-prev" aria-label="Previous page">&#8249; prev</button>
+        <span class="page-indicator" id="page-indicator">page 1 of 1</span>
+        <button class="page-btn" id="page-next" aria-label="Next page">next &#8250;</button>
+    </div>
 </div>
 
 <script>
     function initLedger() {
+        var PAGE_SIZE = 15;
+
         var rows = Array.from(document.querySelectorAll('.ledger-row'));
         var noResults = document.getElementById('no-results');
         var searchInput = document.getElementById('repo-search');
         var langChips = Array.from(document.querySelectorAll('#language-filter .filter-chip'));
         var sidebarItems = Array.from(document.querySelectorAll('#category-sidebar .category-item'));
+        var pagination = document.getElementById('ledger-pagination');
+        var pageIndicator = document.getElementById('page-indicator');
+        var prevBtn = document.getElementById('page-prev');
+        var nextBtn = document.getElementById('page-next');
 
-        if (!noResults || !searchInput) return;
+        if (!noResults || !searchInput || !pagination || !pageIndicator || !prevBtn || !nextBtn) return;
 
         var activeCategory = 'All';
         var activeLanguage = 'All';
         var searchTerm = '';
+        var currentPage = 0;
 
         function matches(row) {
             var catOk = activeCategory === 'All' || row.getAttribute('data-category') === activeCategory;
@@ -250,21 +304,34 @@ const { repos, languages } = Astro.props;
         }
 
         function render() {
-            var visibleCount = 0;
+            var eligible = rows.filter(matches);
+            var pages = Math.max(1, Math.ceil(eligible.length / PAGE_SIZE));
+            if (currentPage >= pages) currentPage = pages - 1;
+
+            var start = currentPage * PAGE_SIZE;
+            var visible = eligible.slice(start, start + PAGE_SIZE);
+
             rows.forEach(function(row) {
-                if (matches(row)) {
-                    row.removeAttribute('hidden');
-                    visibleCount++;
-                } else {
-                    row.setAttribute('hidden', '');
-                }
+                row.setAttribute('hidden', '');
+            });
+            visible.forEach(function(row) {
+                row.removeAttribute('hidden');
             });
 
-            if (visibleCount === 0) {
+            if (eligible.length === 0) {
                 updateNoResultsText();
                 noResults.classList.add('visible');
             } else {
                 noResults.classList.remove('visible');
+            }
+
+            if (pages > 1) {
+                pagination.classList.add('visible');
+                pageIndicator.textContent = 'page ' + (currentPage + 1) + ' of ' + pages;
+                prevBtn.disabled = currentPage === 0;
+                nextBtn.disabled = currentPage >= pages - 1;
+            } else {
+                pagination.classList.remove('visible');
             }
         }
 
@@ -273,6 +340,7 @@ const { repos, languages } = Astro.props;
                 activeCategory = item.getAttribute('data-category');
                 sidebarItems.forEach(function(i) { i.classList.remove('active'); });
                 item.classList.add('active');
+                currentPage = 0;
                 render();
             });
         });
@@ -282,12 +350,26 @@ const { repos, languages } = Astro.props;
                 activeLanguage = chip.getAttribute('data-language');
                 langChips.forEach(function(c) { c.classList.remove('active'); });
                 chip.classList.add('active');
+                currentPage = 0;
                 render();
             });
         });
 
         searchInput.addEventListener('input', function(e) {
             searchTerm = e.target.value;
+            currentPage = 0;
+            render();
+        });
+
+        prevBtn.addEventListener('click', function() {
+            if (currentPage > 0) {
+                currentPage--;
+                render();
+            }
+        });
+
+        nextBtn.addEventListener('click', function() {
+            currentPage++;
             render();
         });
 
