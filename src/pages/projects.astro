@@ -1,8 +1,41 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.vue";
-import Projects from "../components/Projects.astro";
+import CategorySidebar from "../components/CategorySidebar.astro";
+import RepoLedger from "../components/RepoLedger.astro";
 import Footer from "../components/Footer.astro";
+import { fetchRepos } from "../lib/fetchRepos.js";
+import categoriesData from "../data/categories.json";
+
+const githubLink = "https://github.com/choicespecs";
+const githubLogo = "https://choicespecs-website.s3.us-east-2.amazonaws.com/github.png";
+
+const rawRepos = await fetchRepos();
+
+const colorFor = (categoryName) => {
+    const known = categoriesData.categoryOrder.find((c) => c.name === categoryName);
+    return known ? known.color : categoriesData.uncategorizedColor;
+};
+
+const repos = rawRepos.map((r) => {
+    const category = categoriesData.repoCategories[r.name] || "Uncategorized";
+    return { ...r, category, categoryColor: colorFor(category) };
+});
+
+const categoryCounts = {};
+repos.forEach((r) => {
+    categoryCounts[r.category] = (categoryCounts[r.category] || 0) + 1;
+});
+
+const categories = categoriesData.categoryOrder
+    .map((c) => ({ ...c, count: categoryCounts[c.name] || 0 }))
+    .concat(
+        categoryCounts["Uncategorized"]
+            ? [{ name: "Uncategorized", color: categoriesData.uncategorizedColor, count: categoryCounts["Uncategorized"] }]
+            : []
+    );
+
+const languages = ["All", ...Array.from(new Set(repos.map((r) => r.language))).sort()];
 ---
 
 <style>
@@ -12,9 +45,46 @@ import Footer from "../components/Footer.astro";
         padding: 1.5em 0 3em;
     }
 
+    #repo-index {
+        margin: 1.5em auto;
+        width: 95%;
+        max-width: 1400px;
+        scroll-margin-top: 100px;
+    }
+
+    .repo-index-title {
+        padding: 0.8em 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--ledger-border);
+        margin-bottom: 1em;
+    }
+
+    .repo-index-title h1 {
+        font-family: var(--ledger-font-mono);
+        font-size: 1.4em;
+        color: var(--ledger-text);
+    }
+
+    .github-link img {
+        width: 28px;
+        height: 28px;
+        display: block;
+    }
+
+    .ledger-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
     @media screen and (min-width: 641px) {
         main {
             padding: 2em 0 3em;
+        }
+
+        .ledger-layout {
+            flex-direction: row;
         }
     }
 
@@ -22,13 +92,28 @@ import Footer from "../components/Footer.astro";
         main {
             padding: 2.5em 0 4em;
         }
+
+        .repo-index-title h1 {
+            font-size: 1.8em;
+        }
     }
 </style>
 
 <BaseLayout>
     <Navbar client:load />
     <main>
-        <Projects />
+        <section id="repo-index">
+            <header class="repo-index-title">
+                <h1>Repo Index</h1>
+                <a class="github-link" href={githubLink} aria-label="GitHub profile">
+                    <img src={githubLogo} alt="GitHub">
+                </a>
+            </header>
+            <div class="ledger-layout">
+                <CategorySidebar categories={categories} totalCount={repos.length} />
+                <RepoLedger repos={repos} languages={languages} />
+            </div>
+        </section>
     </main>
     <Footer />
 </BaseLayout>

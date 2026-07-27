@@ -1,0 +1,215 @@
+[
+  {
+    "name": "speckit-live-workshop",
+    "html_url": "https://github.com/choicespecs/speckit-live-workshop",
+    "description": "",
+    "language": "Other"
+  },
+  {
+    "name": "speckit-demo",
+    "html_url": "https://github.com/choicespecs/speckit-demo",
+    "description": "",
+    "language": "Shell"
+  },
+  {
+    "name": "speckit-complex-demo",
+    "html_url": "https://github.com/choicespecs/speckit-complex-demo",
+    "description": "more complicated demo",
+    "language": "Shell"
+  },
+  {
+    "name": "abc-journaling",
+    "html_url": "https://github.com/choicespecs/abc-journaling",
+    "description": "CBT journaling",
+    "language": "Shell"
+  },
+  {
+    "name": "TypescriptDesignPatterns",
+    "html_url": "https://github.com/choicespecs/TypescriptDesignPatterns",
+    "live_url": "https://choicespecs.github.io/TypescriptDesignPatterns/",
+    "description": "Collection of design patterns implemented within typescript.",
+    "language": "TypeScript"
+  },
+  {
+    "name": "java-api-study-demo",
+    "html_url": "https://github.com/choicespecs/java-api-study-demo",
+    "description": "A reference project that can deploy an interactive website that highlights java api development",
+    "language": "Java"
+  },
+  {
+    "name": "api-study-demo-typescript",
+    "html_url": "https://github.com/choicespecs/api-study-demo-typescript",
+    "live_url": "https://choicespecs.github.io/api-study-demo-typescript/",
+    "description": "this is meant to be the same as the api-study-demo but in typescript for github pages",
+    "language": "JavaScript"
+  },
+  {
+    "name": "api-playground",
+    "html_url": "https://github.com/choicespecs/api-playground",
+    "description": "",
+    "language": "HTML"
+  },
+  {
+    "name": "regex-builder",
+    "html_url": "https://github.com/choicespecs/regex-builder",
+    "live_url": "https://choicespecs.github.io/regex-builder/",
+    "description": "",
+    "language": "JavaScript"
+  },
+  {
+    "name": "linkedin-helper",
+    "html_url": "https://github.com/choicespecs/linkedin-helper",
+    "description": "",
+    "language": "JavaScript"
+  },
+  {
+    "name": "url-shortener-demo",
+    "html_url": "https://github.com/choicespecs/url-shortener-demo",
+    "live_url": "https://choicespecs.github.io/url-shortener-demo/",
+    "description": "",
+    "language": "Java"
+  },
+  {
+    "name": "java-log-metric-system",
+    "html_url": "https://github.com/choicespecs/java-log-metric-system",
+    "live_url": "https://choicespecs.github.io/java-log-metric-system/",
+    "description": "",
+    "language": "Java"
+  },
+  {
+    "name": "java-e-grocery-store-demo",
+    "html_url": "https://github.com/choicespecs/java-e-grocery-store-demo",
+    "live_url": "https://choicespecs.github.io/java-e-grocery-store-demo/",
+    "description": "",
+    "language": "HTML"
+  },
+  {
+    "name": "choicespecssite",
+    "html_url": "https://github.com/choicespecs/choicespecssite",
+    "live_url": "https://www.choicespecs.com",
+    "description": "My personal website and portfolio",
+    "language": "Astro"
+  },
+  {
+    "name": "choicespecs",
+    "html_url": "https://github.com/choicespecs/choicespecs",
+    "description": "Front page GITHUB Readme",
+    "language": "Other"
+  },
+  {
+    "name": "youtube-transcript-tool",
+    "html_url": "https://github.com/choicespecs/youtube-transcript-tool",
+    "description": "This is an easier youtube transcript too without the ads and other crap",
+    "language": "CSS"
+  },
+  {
+    "name": "java-file-upload-demo-application",
+    "html_url": "https://github.com/choicespecs/java-file-upload-demo-application",
+    "description": "",
+    "language": "Java"
+  },
+  {
+    "name": "java-aws-sam-application",
+    "html_url": "https://github.com/choicespecs/java-aws-sam-application",
+    "description": "Reference for demo application which is build on SAM (severless-application-model) in AWS",
+    "language": "Java"
+  },
+  {
+    "name": "java-ec2-sample-application",
+    "html_url": "https://github.com/choicespecs/java-ec2-sample-application",
+    "description": "Small practice web application in java used to just practice ec2 aws application development",
+    "language": "Java"
+  },
+  {
+    "name": "json-toolbox",
+    "html_url": "https://github.com/choicespecs/json-toolbox",
+    "live_url": "https://choicespecs.github.io/json-toolbox/",
+    "description": "Small web application used for reading and analyzing JSON",
+    "language": "TypeScript"
+  },
+  {
+    "name": "xml-toolbox",
+    "html_url": "https://github.com/choicespecs/xml-toolbox",
+    "live_url": "https://choicespecs.github.io/xml-toolbox/",
+    "description": "Small web application used for reading and analyzing XML",
+    "language": "TypeScript"
+  },
+  {
+    "name": "java-webhook-application",
+    "html_url": "https://github.com/choicespecs/java-webhook-application",
+    "description": "Practice with webhooks in java",
+    "language": "HTML"
+  },
+  {
+    "name": "claude-folder",
+    "html_url": "https://github.com/choicespecs/claude-folder",
+    "description": "What I use for my .claude folder",
+    "language": "Other"
+  },
+  {
+    "name": "java-order-processing-system",
+    "html_url": "https://github.com/choicespecs/java-order-processing-system",
+    "description": "Practice order processing system / application",
+    "language": "Java"
+  },
+  {
+    "name": "user-service-microservice",
+    "html_url": "https://github.com/choicespecs/user-service-microservice",
+    "description": "user service microservice",
+    "language": "Java"
+  },
+  {
+    "name": "dotfiles",
+    "html_url": "https://github.com/choicespecs/dotfiles",
+    "description": "config for my personal environment",
+    "language": "Shell"
+  },
+  {
+    "name": "sfindproject",
+    "html_url": "https://github.com/choicespecs/sfindproject",
+    "description": "This function is similar to find. It will print out the directories and files. However; it will also take arguments to search for specific substrings and types.",
+    "language": "C"
+  },
+  {
+    "name": "cityActivityTracker",
+    "html_url": "https://github.com/choicespecs/cityActivityTracker",
+    "description": "City Activity Tracker which utilizes html, php, mysql, and JS to run.",
+    "language": "PHP"
+  },
+  {
+    "name": "chunkproject",
+    "html_url": "https://github.com/choicespecs/chunkproject",
+    "description": "Unix program which will separate files into \"chunks\" depending on characters, word count, or line count arguments placed within program.",
+    "language": "C"
+  },
+  {
+    "name": "termproject",
+    "html_url": "https://github.com/choicespecs/termproject",
+    "description": "CSCI 4800 Human Computer Interaction Term Project! Website created using html & css. Mockup and Wireframes were created using figma.",
+    "language": "HTML"
+  },
+  {
+    "name": "myownunixshell",
+    "html_url": "https://github.com/choicespecs/myownunixshell",
+    "description": "This is a shell that is created using readline GNU library as well as utilizing functions created within the program. This shell has a few built in commands such as jobs, history, kill, cd, exit. and help.",
+    "language": "C"
+  },
+  {
+    "name": "socketchatserverclient",
+    "html_url": "https://github.com/choicespecs/socketchatserverclient",
+    "description": "A chat server and client that utilizes sockets and pthreads to connect and work together to echo messages. This server will highlight information such as current users, and will have some form of customization such as allowing a certain amount of users unto a specific server or \"chat room\".",
+    "language": "C"
+  },
+  {
+    "name": "youtube_API_DataCollection",
+    "html_url": "https://github.com/choicespecs/youtube_API_DataCollection",
+    "description": "Using python, pandas, numpy, and youtube API to keep track of searches, videos, channels, and other information.",
+    "language": "Python"
+  },
+  {
+    "name": "Afinn1111project",
+    "html_url": "https://github.com/choicespecs/Afinn1111project",
+    "description": "This is a small python program that will take user input and output whether or not the sentence, word, or whatever is placed within it is positive, negative, or invalid based upon the AFINN 111 word list created by Finn Årup Nielsen",
+    "language": "Python"
+  }
+]

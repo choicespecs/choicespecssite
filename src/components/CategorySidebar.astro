@@ -1,0 +1,120 @@
+---
+const { categories, totalCount } = Astro.props;
+// categories: [{ name, color, count }]
+---
+
+<style>
+    .category-sidebar {
+        width: var(--sidebar-width, 200px);
+        flex-shrink: 0;
+        background-color: var(--sidebar-bg);
+        border: 1px solid var(--sidebar-border);
+        border-right: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0.8em 0;
+    }
+
+    .sidebar-label {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--sidebar-label);
+        padding: 0.4em 1em 0.6em;
+    }
+
+    .category-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        border-left: 3px solid transparent;
+        padding: 0.5em 1em;
+        font-size: 13px;
+        color: var(--ledger-text);
+        cursor: pointer;
+        font-family: var(--ledger-font-sans);
+        transition: background-color 0.1s ease, border-color 0.1s ease;
+    }
+
+    .category-item:hover {
+        background-color: var(--ledger-row-hover);
+    }
+
+    .category-item.active {
+        border-left-color: var(--ledger-accent);
+        font-weight: 700;
+        background-color: var(--ledger-row-hover);
+    }
+
+    .cat-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background-color: var(--dot-color, transparent);
+    }
+
+    .cat-name {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .cat-count {
+        font-family: var(--ledger-font-mono);
+        font-size: 11px;
+        color: var(--ledger-text-secondary);
+    }
+
+    /* ── Mobile: collapse into a horizontal scrollable chip strip ── */
+    @media screen and (max-width: 640px) {
+        .category-sidebar {
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            overflow-x: auto;
+            border-right: 1px solid var(--sidebar-border);
+            padding: 0.6em;
+            gap: 0.4em;
+        }
+
+        .sidebar-label {
+            display: none;
+        }
+
+        .category-item {
+            width: auto;
+            flex-shrink: 0;
+            border-left: none;
+            border: 1px solid var(--sidebar-border);
+            border-radius: 999px;
+            padding: 5px 12px;
+        }
+
+        .category-item.active {
+            border-color: var(--ledger-accent);
+            background-color: var(--ledger-accent);
+        }
+    }
+</style>
+
+<aside class="category-sidebar" id="category-sidebar">
+    <div class="sidebar-label">Categories</div>
+    <button class="category-item active" data-category="All">
+        <span class="cat-dot"></span>
+        <span class="cat-name">All</span>
+        <span class="cat-count">({totalCount})</span>
+    </button>
+    {categories.map((cat) => (
+        <button class="category-item" data-category={cat.name} style={`--dot-color: ${cat.color}`}>
+            <span class="cat-dot"></span>
+            <span class="cat-name">{cat.name}</span>
+            <span class="cat-count">({cat.count})</span>
+        </button>
+    ))}
+</aside>
