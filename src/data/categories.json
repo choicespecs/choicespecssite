@@ -1,0 +1,45 @@
+{
+  "categoryOrder": [
+    { "name": "Developer Tools", "color": "#2563EB" },
+    { "name": "Personal Tools", "color": "#16A34A" },
+    { "name": "Prototypes", "color": "#D97706" }
+  ],
+  "uncategorizedColor": "#9CA3AF",
+  "repoCategories": {
+    "TypescriptDesignPatterns": "Developer Tools",
+    "java-api-study-demo": "Developer Tools",
+    "api-study-demo-typescript": "Developer Tools",
+    "api-playground": "Developer Tools",
+    "regex-builder": "Developer Tools",
+    "java-log-metric-system": "Developer Tools",
+    "java-aws-sam-application": "Developer Tools",
+    "json-toolbox": "Developer Tools",
+    "xml-toolbox": "Developer Tools",
+
+    "abc-journaling": "Personal Tools",
+    "linkedin-helper": "Personal Tools",
+    "choicespecssite": "Personal Tools",
+    "youtube-transcript-tool": "Personal Tools",
+    "claude-folder": "Personal Tools",
+    "dotfiles": "Personal Tools",
+    "youtube_API_DataCollection": "Personal Tools",
+
+    "speckit-live-workshop": "Prototypes",
+    "speckit-demo": "Prototypes",
+    "speckit-complex-demo": "Prototypes",
+    "url-shortener-demo": "Prototypes",
+    "java-e-grocery-store-demo": "Prototypes",
+    "java-file-upload-demo-application": "Prototypes",
+    "java-ec2-sample-application": "Prototypes",
+    "java-webhook-application": "Prototypes",
+    "java-order-processing-system": "Prototypes",
+    "user-service-microservice": "Prototypes",
+    "sfindproject": "Prototypes",
+    "cityActivityTracker": "Prototypes",
+    "chunkproject": "Prototypes",
+    "termproject": "Prototypes",
+    "myownunixshell": "Prototypes",
+    "socketchatserverclient": "Prototypes",
+    "Afinn1111project": "Prototypes"
+  }
+}

@@ -1,0 +1,298 @@
+---
+const { repos, languages } = Astro.props;
+// repos: [{ name, html_url, live_url, description, language, category, categoryColor }]
+---
+
+<style>
+    .ledger-panel {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--ledger-bg);
+        border: 1px solid var(--ledger-border);
+    }
+
+    .ledger-toolbar {
+        padding: 0.8em 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6em;
+        border-bottom: 1px solid var(--ledger-border);
+    }
+
+    #repo-search {
+        width: 100%;
+        font-family: var(--ledger-font-mono);
+        font-size: 14px;
+        padding: 8px 10px;
+        border: 1px solid var(--ledger-border);
+        border-radius: var(--ledger-radius);
+        background-color: var(--ledger-bg);
+        color: var(--ledger-text);
+    }
+
+    #repo-search:focus {
+        outline: 2px solid var(--ledger-accent);
+        outline-offset: -1px;
+    }
+
+    #language-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .filter-chip {
+        font-family: var(--ledger-font-sans);
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border: 1px solid var(--ledger-border);
+        border-radius: var(--ledger-radius);
+        background-color: var(--ledger-bg);
+        color: var(--ledger-text);
+        cursor: pointer;
+        transition: background-color 0.1s ease, color 0.1s ease;
+    }
+
+    .filter-chip:hover {
+        background-color: var(--ledger-row-hover);
+    }
+
+    .filter-chip.active {
+        background-color: var(--ledger-accent);
+        border-color: var(--ledger-accent);
+        color: var(--ledger-side);
+    }
+
+    .ledger-rows {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ledger-row {
+        display: flex;
+        align-items: stretch;
+        border-bottom: 1px solid var(--ledger-border);
+        transition: background-color 0.1s ease;
+    }
+
+    .ledger-row:last-child {
+        border-bottom: none;
+    }
+
+    .ledger-row:hover {
+        background-color: var(--ledger-row-hover);
+    }
+
+    .ledger-row[hidden] {
+        display: none;
+    }
+
+    .row-cat-bar {
+        width: 3px;
+        flex-shrink: 0;
+        background-color: var(--row-cat-color, transparent);
+    }
+
+    .row-main {
+        flex: 1;
+        min-width: 0;
+        padding: 0.6em 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .row-name {
+        font-family: var(--ledger-font-mono);
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ledger-text);
+    }
+
+    .row-name:hover {
+        text-decoration: underline;
+    }
+
+    .row-desc {
+        font-family: var(--ledger-font-sans);
+        font-size: 13px;
+        color: var(--ledger-text-secondary);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .row-meta {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.8em;
+        padding: 0 1em;
+    }
+
+    .row-live {
+        font-size: 15px;
+        color: var(--ledger-text-secondary);
+    }
+
+    .row-live:hover {
+        color: var(--ledger-text);
+    }
+
+    .row-lang {
+        font-family: var(--ledger-font-mono);
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: var(--ledger-text-secondary);
+        min-width: 4.5em;
+        text-align: right;
+    }
+
+    .no-results {
+        display: none;
+        padding: 2em 1em;
+        text-align: center;
+        font-family: var(--ledger-font-mono);
+        font-size: 13px;
+        color: var(--ledger-text-secondary);
+    }
+
+    .no-results.visible {
+        display: block;
+    }
+
+    @media screen and (min-width: 641px) {
+        .row-desc {
+            font-size: 13.5px;
+        }
+    }
+</style>
+
+<div class="ledger-panel">
+    <div class="ledger-toolbar">
+        <input type="text" id="repo-search" placeholder="search repos..." autocomplete="off" />
+        <div id="language-filter">
+            {languages.map((lang) => (
+                <button
+                    class={'filter-chip' + (lang === 'All' ? ' active' : '')}
+                    data-language={lang}
+                >{lang}</button>
+            ))}
+        </div>
+    </div>
+
+    <div class="ledger-rows" id="ledger-rows">
+        {repos.map((repo) => (
+            <div
+                class="ledger-row"
+                data-name={repo.name}
+                data-desc={repo.description}
+                data-language={repo.language}
+                data-category={repo.category}
+            >
+                <span class="row-cat-bar" style={`--row-cat-color: ${repo.categoryColor}`}></span>
+                <div class="row-main">
+                    <a class="row-name" href={repo.html_url} target="_blank" rel="noopener">{repo.name}</a>
+                    {repo.description && <p class="row-desc">{repo.description}</p>}
+                </div>
+                <div class="row-meta">
+                    {repo.live_url && (
+                        <a class="row-live" href={repo.live_url} target="_blank" rel="noopener" aria-label={`Live demo for ${repo.name}`}>&#8599;</a>
+                    )}
+                    <span class="row-lang">{repo.language}</span>
+                </div>
+            </div>
+        ))}
+    </div>
+
+    <p class="no-results" id="no-results">no repos found</p>
+</div>
+
+<script>
+    function initLedger() {
+        var rows = Array.from(document.querySelectorAll('.ledger-row'));
+        var noResults = document.getElementById('no-results');
+        var searchInput = document.getElementById('repo-search');
+        var langChips = Array.from(document.querySelectorAll('#language-filter .filter-chip'));
+        var sidebarItems = Array.from(document.querySelectorAll('#category-sidebar .category-item'));
+
+        if (!noResults || !searchInput) return;
+
+        var activeCategory = 'All';
+        var activeLanguage = 'All';
+        var searchTerm = '';
+
+        function matches(row) {
+            var catOk = activeCategory === 'All' || row.getAttribute('data-category') === activeCategory;
+            var langOk = activeLanguage === 'All' || row.getAttribute('data-language') === activeLanguage;
+            var term = searchTerm.toLowerCase();
+            var name = (row.getAttribute('data-name') || '').toLowerCase();
+            var desc = (row.getAttribute('data-desc') || '').toLowerCase();
+            var searchOk = term === '' || name.indexOf(term) !== -1 || desc.indexOf(term) !== -1;
+            return catOk && langOk && searchOk;
+        }
+
+        function updateNoResultsText() {
+            var scope = [];
+            if (activeCategory !== 'All') scope.push(activeCategory);
+            if (activeLanguage !== 'All') scope.push(activeLanguage);
+
+            var msg = 'no repos match';
+            var hasTerm = searchTerm.length > 0;
+            if (hasTerm) msg += ' "' + searchTerm + '"';
+            if (scope.length) msg += ' in ' + scope.join(' + ');
+            if (!hasTerm && !scope.length) msg = 'no repos found';
+            noResults.textContent = msg;
+        }
+
+        function render() {
+            var visibleCount = 0;
+            rows.forEach(function(row) {
+                if (matches(row)) {
+                    row.removeAttribute('hidden');
+                    visibleCount++;
+                } else {
+                    row.setAttribute('hidden', '');
+                }
+            });
+
+            if (visibleCount === 0) {
+                updateNoResultsText();
+                noResults.classList.add('visible');
+            } else {
+                noResults.classList.remove('visible');
+            }
+        }
+
+        sidebarItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                activeCategory = item.getAttribute('data-category');
+                sidebarItems.forEach(function(i) { i.classList.remove('active'); });
+                item.classList.add('active');
+                render();
+            });
+        });
+
+        langChips.forEach(function(chip) {
+            chip.addEventListener('click', function() {
+                activeLanguage = chip.getAttribute('data-language');
+                langChips.forEach(function(c) { c.classList.remove('active'); });
+                chip.classList.add('active');
+                render();
+            });
+        });
+
+        searchInput.addEventListener('input', function(e) {
+            searchTerm = e.target.value;
+            render();
+        });
+
+        render();
+    }
+
+    document.addEventListener('DOMContentLoaded', initLedger);
+</script>

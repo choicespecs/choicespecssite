@@ -22,17 +22,19 @@ Two-page Astro site deployed to GitHub Pages at `https://www.choicespecs.com`.
 
 **Pages:**
 - `src/pages/index.astro` — About Me. Renders `Navbar`, `Header`, `Footer`.
-- `src/pages/projects.astro` — Projects. Renders `Navbar`, `Projects`, `Footer`.
+- `src/pages/projects.astro` — Repo Index. A personal reference tool (not a portfolio showcase) for finding repos on `github.com/choicespecs` by category, language, or search. Fetches live repo data at build time and renders `Navbar`, `CategorySidebar`, `RepoLedger`, `Footer`.
 
 **Data layer — edit JSON files to update content:**
-- `src/data/projects.json` — all projects shown on the Projects page. Fields: `name`, `html_url`, `live_url` (optional — omit if no live demo), `description`, `language`, `topics`. Adding a project here is all that's needed — filter buttons and carousel update automatically.
+- `src/data/categories.json` — hand-maintained. `repoCategories` maps `repo-name` → one category name (one category per repo). `categoryOrder` is the ordered list of valid categories with a hex `color` each, used for the sidebar dot/left-bar color and rendered in that order. Any repo missing from `repoCategories` falls into an "Uncategorized" bucket automatically — check this bucket after adding new GitHub repos, since they won't be categorized until added here.
+- `src/data/repos-cache.json` — auto-written fallback snapshot, do not hand-edit. `src/lib/fetchRepos.js` overwrites it after every successful build-time GitHub API fetch and reads from it only if that fetch fails (e.g. CI has no network access), so a build never breaks on a flaky API call.
 - `src/data/social.json` — social links shown in the navbar mobile menu, header, and footer.
 
-**Projects component (`src/components/Projects.astro`):**
-- Language filter buttons are derived at build time from the unique `language` values in `projects.json` — no code changes needed when adding a new language.
-- Carousel pages: 1 per page on mobile (< 641px), 4 per page on tablet (641–940px, 2-column grid), 3 per page on desktop (941px+, 3-column grid).
-- Nav arrows and dots only appear when the total filtered results exceed the per-page limit.
-- Cards beyond index 2 have `data-hidden` set in the static HTML to prevent a flash before JS runs.
+**Repo fetching (`src/lib/fetchRepos.js`):** Build-time-only, called from `projects.astro` frontmatter. Hits the unauthenticated GitHub REST API (`api.github.com/users/choicespecs/repos`) — public repos only, no token needed. Excludes forks. Maps `homepage` → `live_url`. Resolves the cache path via `process.cwd()`, not `import.meta.url` — the latter breaks once Astro bundles this module into `dist/entry.mjs`, since the bundled file's location no longer matches its source location.
+
+**Repo Index layout (`CategorySidebar.astro` + `RepoLedger.astro`):**
+- `CategorySidebar` renders category filter buttons with live repo counts; collapses from a vertical sidebar to a horizontal scrollable chip strip below 641px via a `max-width: 640px` media query in the same component (no separate mobile markup).
+- `RepoLedger` renders the search input, language filter chips, and the dense monospace row list; owns the single client `<script>` that combines active category (read from `CategorySidebar`'s DOM via `#category-sidebar .category-item`) + active language + search substring (matched against repo name and description) with AND logic, toggling a `hidden` attribute per row.
+- No pagination/carousel — all matching rows render at once, since the page's purpose is fast lookup, not a showcase.
 
 **Styling:** Global CSS variables in `src/styles/global.css` — `--side-color: #262626` (dark navbar/footer) and `--button-color: #F9BF3F` (yellow). Each component carries its own scoped `<style>` block. Breakpoints used across the site: 641px (tablet), 941px (desktop), 1200px (wide desktop).
 
