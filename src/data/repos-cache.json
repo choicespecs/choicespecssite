@@ -1,9 +1,28 @@
 [
   {
+    "name": "api-playground",
+    "html_url": "https://github.com/choicespecs/api-playground",
+    "description": "",
+    "language": "HTML"
+  },
+  {
     "name": "speckit-live-workshop",
     "html_url": "https://github.com/choicespecs/speckit-live-workshop",
     "description": "",
     "language": "Other"
+  },
+  {
+    "name": "claude-folder",
+    "html_url": "https://github.com/choicespecs/claude-folder",
+    "description": "What I use for my .claude folder",
+    "language": "JavaScript"
+  },
+  {
+    "name": "choicespecssite",
+    "html_url": "https://github.com/choicespecs/choicespecssite",
+    "live_url": "https://www.choicespecs.com",
+    "description": "My personal website and portfolio",
+    "language": "Astro"
   },
   {
     "name": "speckit-demo",
@@ -44,12 +63,6 @@
     "language": "JavaScript"
   },
   {
-    "name": "api-playground",
-    "html_url": "https://github.com/choicespecs/api-playground",
-    "description": "",
-    "language": "HTML"
-  },
-  {
     "name": "regex-builder",
     "html_url": "https://github.com/choicespecs/regex-builder",
     "live_url": "https://choicespecs.github.io/regex-builder/",
@@ -82,13 +95,6 @@
     "live_url": "https://choicespecs.github.io/java-e-grocery-store-demo/",
     "description": "",
     "language": "HTML"
-  },
-  {
-    "name": "choicespecssite",
-    "html_url": "https://github.com/choicespecs/choicespecssite",
-    "live_url": "https://www.choicespecs.com",
-    "description": "My personal website and portfolio",
-    "language": "Astro"
   },
   {
     "name": "choicespecs",
@@ -139,12 +145,6 @@
     "html_url": "https://github.com/choicespecs/java-webhook-application",
     "description": "Practice with webhooks in java",
     "language": "HTML"
-  },
-  {
-    "name": "claude-folder",
-    "html_url": "https://github.com/choicespecs/claude-folder",
-    "description": "What I use for my .claude folder",
-    "language": "Other"
   },
   {
     "name": "java-order-processing-system",
