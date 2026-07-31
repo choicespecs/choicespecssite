@@ -26,8 +26,8 @@
     "dotfiles": "Config",
     "youtube_API_DataCollection": "Prototypes",
     "speckit-live-workshop": "Learning Reference",
-    "speckit-demo": "Learning Reference",
-    "speckit-complex-demo": "Learning Reference",
+    "speckit-demo": "Demo",
+    "speckit-complex-demo": "Demo",
     "url-shortener-demo": "Demos",
     "java-e-grocery-store-demo": "Demos",
     "java-file-upload-demo-application": "Demos",
@@ -41,6 +41,7 @@
     "termproject": "Project",
     "myownunixshell": "Project",
     "socketchatserverclient": "Project",
-    "Afinn1111project": "Prototypes"
+    "Afinn1111project": "Prototypes",
+    "rag-doc-toolkit": "Developer Tools"
   }
 }

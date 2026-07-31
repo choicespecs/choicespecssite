@@ -1,9 +1,17 @@
 [
   {
-    "name": "api-playground",
-    "html_url": "https://github.com/choicespecs/api-playground",
+    "name": "rag-doc-toolkit",
+    "html_url": "https://github.com/choicespecs/rag-doc-toolkit",
+    "live_url": "https://choicespecs.github.io/rag-doc-toolkit/",
     "description": "",
-    "language": "HTML"
+    "language": "Shell"
+  },
+  {
+    "name": "choicespecssite",
+    "html_url": "https://github.com/choicespecs/choicespecssite",
+    "live_url": "https://www.choicespecs.com",
+    "description": "My personal website and portfolio",
+    "language": "Astro"
   },
   {
     "name": "speckit-live-workshop",
@@ -12,17 +20,16 @@
     "language": "Other"
   },
   {
+    "name": "api-playground",
+    "html_url": "https://github.com/choicespecs/api-playground",
+    "description": "",
+    "language": "HTML"
+  },
+  {
     "name": "claude-folder",
     "html_url": "https://github.com/choicespecs/claude-folder",
     "description": "What I use for my .claude folder",
     "language": "JavaScript"
-  },
-  {
-    "name": "choicespecssite",
-    "html_url": "https://github.com/choicespecs/choicespecssite",
-    "live_url": "https://www.choicespecs.com",
-    "description": "My personal website and portfolio",
-    "language": "Astro"
   },
   {
     "name": "speckit-demo",
