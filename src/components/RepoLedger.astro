@@ -105,6 +105,12 @@ const { repos, languages } = Astro.props;
         gap: 2px;
     }
 
+    .row-name-line {
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+    }
+
     .row-name {
         font-family: var(--ledger-font-mono);
         font-size: 15px;
@@ -134,7 +140,8 @@ const { repos, languages } = Astro.props;
     }
 
     .row-live {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1;
         color: var(--ledger-text-secondary);
     }
 
@@ -237,13 +244,15 @@ const { repos, languages } = Astro.props;
             >
                 <span class="row-cat-bar" style={`--row-cat-color: ${repo.categoryColor}`}></span>
                 <div class="row-main">
-                    <a class="row-name" href={repo.html_url} target="_blank" rel="noopener">{repo.name}</a>
+                    <div class="row-name-line">
+                        <a class="row-name" href={repo.html_url} target="_blank" rel="noopener">{repo.name}</a>
+                        {repo.live_url && (
+                            <a class="row-live" href={repo.live_url} target="_blank" rel="noopener" aria-label={`Live demo for ${repo.name}`}>&#8599;</a>
+                        )}
+                    </div>
                     {repo.description && <p class="row-desc">{repo.description}</p>}
                 </div>
                 <div class="row-meta">
-                    {repo.live_url && (
-                        <a class="row-live" href={repo.live_url} target="_blank" rel="noopener" aria-label={`Live demo for ${repo.name}`}>&#8599;</a>
-                    )}
                     <span class="row-lang">{repo.language}</span>
                 </div>
             </div>
