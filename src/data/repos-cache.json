@@ -1,15 +1,8 @@
 [
   {
-    "name": "choicespecssite",
-    "html_url": "https://github.com/choicespecs/choicespecssite",
-    "live_url": "https://www.choicespecs.com",
-    "description": "My personal website and portfolio",
-    "language": "Astro"
-  },
-  {
-    "name": "rag-doc-toolkit",
-    "html_url": "https://github.com/choicespecs/rag-doc-toolkit",
-    "live_url": "https://choicespecs.github.io/rag-doc-toolkit/",
+    "name": "rag-learning-page",
+    "html_url": "https://github.com/choicespecs/rag-learning-page",
+    "live_url": "https://choicespecs.github.io/rag-learning-page/",
     "description": "",
     "language": "Shell"
   },
@@ -18,6 +11,26 @@
     "html_url": "https://github.com/choicespecs/speckit-live-workshop",
     "description": "",
     "language": "Other"
+  },
+  {
+    "name": "choicespecs",
+    "html_url": "https://github.com/choicespecs/choicespecs",
+    "description": "Front page GITHUB Readme",
+    "language": "Other"
+  },
+  {
+    "name": "rag-doc-toolkit",
+    "html_url": "https://github.com/choicespecs/rag-doc-toolkit",
+    "live_url": "https://choicespecs.github.io/rag-doc-toolkit/",
+    "description": "",
+    "language": "TypeScript"
+  },
+  {
+    "name": "choicespecssite",
+    "html_url": "https://github.com/choicespecs/choicespecssite",
+    "live_url": "https://www.choicespecs.com",
+    "description": "My personal website and portfolio",
+    "language": "Astro"
   },
   {
     "name": "api-playground",
@@ -102,12 +115,6 @@
     "live_url": "https://choicespecs.github.io/java-e-grocery-store-demo/",
     "description": "",
     "language": "HTML"
-  },
-  {
-    "name": "choicespecs",
-    "html_url": "https://github.com/choicespecs/choicespecs",
-    "description": "Front page GITHUB Readme",
-    "language": "Other"
   },
   {
     "name": "youtube-transcript-tool",
