@@ -5,7 +5,8 @@
     { "name": "Prototypes", "color": "#D97706" },
     { "name": "Developer Tools", "color": "#DB2777" },
     { "name": "Config", "color": "#F59E0B" },
-    { "name": "Project", "color": "#8B5CF6" }
+    { "name": "Project", "color": "#8B5CF6" },
+    { "name": "System Design", "color": "#F472B6" }
   ],
   "uncategorizedColor": "#9CA3AF",
   "repoCategories": {
@@ -43,6 +44,11 @@
     "socketchatserverclient": "Project",
     "Afinn1111project": "Prototypes",
     "rag-doc-toolkit": "Developer Tools",
-    "rag-learning-page": "Learning Reference"
+    "rag-learning-page": "Learning Reference",
+    "url-shortener-learning-page": "System Design",
+    "database-learning-page": "Learning Reference",
+    "design-data-intensive-learning-page": "Learning Reference",
+    "twitter-system-design-learning-page": "System Design",
+    "kube-self-learn": "Learning Reference"
   }
 }

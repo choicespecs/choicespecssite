@@ -1,10 +1,57 @@
 [
   {
+    "name": "url-shortener-learning-page",
+    "html_url": "https://github.com/choicespecs/url-shortener-learning-page",
+    "live_url": "https://choicespecs.github.io/url-shortener-learning-page/",
+    "description": "",
+    "language": "Astro"
+  },
+  {
+    "name": "database-learning-page",
+    "html_url": "https://github.com/choicespecs/database-learning-page",
+    "live_url": "https://choicespecs.github.io/database-learning-page/",
+    "description": "",
+    "language": "TypeScript"
+  },
+  {
+    "name": "design-data-intensive-learning-page",
+    "html_url": "https://github.com/choicespecs/design-data-intensive-learning-page",
+    "live_url": "https://choicespecs.github.io/design-data-intensive-learning-page/",
+    "description": "",
+    "language": "MDX"
+  },
+  {
+    "name": "twitter-system-design-learning-page",
+    "html_url": "https://github.com/choicespecs/twitter-system-design-learning-page",
+    "live_url": "https://choicespecs.github.io/twitter-system-design-learning-page/",
+    "description": "",
+    "language": "TypeScript"
+  },
+  {
+    "name": "event-driven-java-sample",
+    "html_url": "https://github.com/choicespecs/event-driven-java-sample",
+    "description": "",
+    "language": "Shell"
+  },
+  {
+    "name": "kube-self-learn",
+    "html_url": "https://github.com/choicespecs/kube-self-learn",
+    "description": "",
+    "language": "Other"
+  },
+  {
     "name": "rag-learning-page",
     "html_url": "https://github.com/choicespecs/rag-learning-page",
     "live_url": "https://choicespecs.github.io/rag-learning-page/",
     "description": "",
     "language": "Shell"
+  },
+  {
+    "name": "choicespecssite",
+    "html_url": "https://github.com/choicespecs/choicespecssite",
+    "live_url": "https://www.choicespecs.com",
+    "description": "My personal website and portfolio",
+    "language": "Astro"
   },
   {
     "name": "speckit-live-workshop",
@@ -24,13 +71,6 @@
     "live_url": "https://choicespecs.github.io/rag-doc-toolkit/",
     "description": "",
     "language": "TypeScript"
-  },
-  {
-    "name": "choicespecssite",
-    "html_url": "https://github.com/choicespecs/choicespecssite",
-    "live_url": "https://www.choicespecs.com",
-    "description": "My personal website and portfolio",
-    "language": "Astro"
   },
   {
     "name": "api-playground",
