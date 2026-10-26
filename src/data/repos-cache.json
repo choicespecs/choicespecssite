@@ -1,17 +1,76 @@
 [
   {
-    "name": "url-shortener-learning-page",
-    "html_url": "https://github.com/choicespecs/url-shortener-learning-page",
-    "live_url": "https://choicespecs.github.io/url-shortener-learning-page/",
+    "name": "bash-reference",
+    "html_url": "https://github.com/choicespecs/bash-reference",
+    "live_url": "https://choicespecs.github.io/bash-reference/",
+    "description": "Bash scripting reference: syntax, common commands, and ready-to-use example scripts",
+    "language": "HTML"
+  },
+  {
+    "name": "git-reference",
+    "html_url": "https://github.com/choicespecs/git-reference",
+    "live_url": "https://choicespecs.github.io/git-reference/",
+    "description": "A searchable, single-page Git learning reference",
+    "language": "HTML"
+  },
+  {
+    "name": "hashing-cryptography-learning-page",
+    "html_url": "https://github.com/choicespecs/hashing-cryptography-learning-page",
+    "description": "A personal learning reference for hashing and cryptography — shortening strings with hashes, salting, password hashing, HMAC, encryption, and signatures, with live in-browser diagrams",
+    "language": "MDX"
+  },
+  {
+    "name": "baby-reference-learning-page",
+    "html_url": "https://github.com/choicespecs/baby-reference-learning-page",
+    "live_url": "https://choicespecs.github.io/baby-reference-learning-page/",
     "description": "",
+    "language": "JavaScript"
+  },
+  {
+    "name": "TypescriptDesignPatterns",
+    "html_url": "https://github.com/choicespecs/TypescriptDesignPatterns",
+    "live_url": "https://choicespecs.github.io/TypescriptDesignPatterns/",
+    "description": "Collection of design patterns implemented within typescript.",
+    "language": "TypeScript"
+  },
+  {
+    "name": "js-ts-array-methods-practice",
+    "html_url": "https://github.com/choicespecs/js-ts-array-methods-practice",
+    "description": "Interactive practice site for JS/TS array methods (map, filter, reduce, chaining, etc.)",
+    "language": "TypeScript"
+  },
+  {
+    "name": "mcp-server-system-design-learning-page",
+    "html_url": "https://github.com/choicespecs/mcp-server-system-design-learning-page",
+    "live_url": "https://choicespecs.github.io/mcp-server-system-design-learning-page/",
+    "description": "Interactive system design learning guide for a remote MCP server",
     "language": "Astro"
+  },
+  {
+    "name": "microservices-learning-page",
+    "html_url": "https://github.com/choicespecs/microservices-learning-page",
+    "live_url": "https://choicespecs.github.io/microservices-learning-page/",
+    "description": "A personal learning reference for microservice architecture, design, and communication patterns",
+    "language": "TypeScript"
   },
   {
     "name": "database-learning-page",
     "html_url": "https://github.com/choicespecs/database-learning-page",
     "live_url": "https://choicespecs.github.io/database-learning-page/",
     "description": "",
-    "language": "TypeScript"
+    "language": "MDX"
+  },
+  {
+    "name": "credit-card-processing-system-design-learning-page",
+    "html_url": "https://github.com/choicespecs/credit-card-processing-system-design-learning-page",
+    "description": "Interactive system design learning guide for a credit card processing system — authorization, ledger, settlement, idempotency, fraud, disputes",
+    "language": "Astro"
+  },
+  {
+    "name": "instagram-system-design-learning-page",
+    "html_url": "https://github.com/choicespecs/instagram-system-design-learning-page",
+    "description": "Interactive system design learning guide for Instagram — media upload, feed fan-out, CDN delivery, sharding, the social graph, and engagement counters.",
+    "language": "Astro"
   },
   {
     "name": "design-data-intensive-learning-page",
@@ -21,11 +80,67 @@
     "language": "MDX"
   },
   {
+    "name": "kubernetes-learning-page",
+    "html_url": "https://github.com/choicespecs/kubernetes-learning-page",
+    "live_url": "https://choicespecs.github.io/kubernetes-learning-page/",
+    "description": "",
+    "language": "JavaScript"
+  },
+  {
+    "name": "caching-learning-page",
+    "html_url": "https://github.com/choicespecs/caching-learning-page",
+    "live_url": "https://choicespecs.github.io/caching-learning-page/",
+    "description": "",
+    "language": "MDX"
+  },
+  {
+    "name": "kafka-learning-page",
+    "html_url": "https://github.com/choicespecs/kafka-learning-page",
+    "live_url": "https://choicespecs.github.io/kafka-learning-page/",
+    "description": "",
+    "language": "TypeScript"
+  },
+  {
+    "name": "dropbox-system-design-learning-page",
+    "html_url": "https://github.com/choicespecs/dropbox-system-design-learning-page",
+    "live_url": "https://choicespecs.github.io/dropbox-system-design-learning-page/",
+    "description": "",
+    "language": "Astro"
+  },
+  {
+    "name": "search-engine-system-design-learning-page",
+    "html_url": "https://github.com/choicespecs/search-engine-system-design-learning-page",
+    "live_url": "https://choicespecs.github.io/search-engine-system-design-learning-page/",
+    "description": "",
+    "language": "Astro"
+  },
+  {
     "name": "twitter-system-design-learning-page",
     "html_url": "https://github.com/choicespecs/twitter-system-design-learning-page",
     "live_url": "https://choicespecs.github.io/twitter-system-design-learning-page/",
     "description": "",
-    "language": "TypeScript"
+    "language": "Astro"
+  },
+  {
+    "name": "google-docs-system-design",
+    "html_url": "https://github.com/choicespecs/google-docs-system-design",
+    "live_url": "https://choicespecs.github.io/google-docs-system-design/",
+    "description": "",
+    "language": "Astro"
+  },
+  {
+    "name": "url-shortener-learning-page",
+    "html_url": "https://github.com/choicespecs/url-shortener-learning-page",
+    "live_url": "https://choicespecs.github.io/url-shortener-learning-page/",
+    "description": "",
+    "language": "Astro"
+  },
+  {
+    "name": "choicespecssite",
+    "html_url": "https://github.com/choicespecs/choicespecssite",
+    "live_url": "https://www.choicespecs.com",
+    "description": "My personal website and portfolio",
+    "language": "Astro"
   },
   {
     "name": "event-driven-java-sample",
@@ -45,13 +160,6 @@
     "live_url": "https://choicespecs.github.io/rag-learning-page/",
     "description": "",
     "language": "Shell"
-  },
-  {
-    "name": "choicespecssite",
-    "html_url": "https://github.com/choicespecs/choicespecssite",
-    "live_url": "https://www.choicespecs.com",
-    "description": "My personal website and portfolio",
-    "language": "Astro"
   },
   {
     "name": "speckit-live-workshop",
@@ -101,13 +209,6 @@
     "html_url": "https://github.com/choicespecs/abc-journaling",
     "description": "CBT journaling",
     "language": "Shell"
-  },
-  {
-    "name": "TypescriptDesignPatterns",
-    "html_url": "https://github.com/choicespecs/TypescriptDesignPatterns",
-    "live_url": "https://choicespecs.github.io/TypescriptDesignPatterns/",
-    "description": "Collection of design patterns implemented within typescript.",
-    "language": "TypeScript"
   },
   {
     "name": "java-api-study-demo",

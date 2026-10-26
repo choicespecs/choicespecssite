@@ -5,6 +5,7 @@
     { "name": "Prototypes", "color": "#D97706" },
     { "name": "Developer Tools", "color": "#DB2777" },
     { "name": "Config", "color": "#F59E0B" },
+    { "name": "Personal Tools", "color": "#0D9488" },
     { "name": "Project", "color": "#8B5CF6" },
     { "name": "System Design", "color": "#F472B6" }
   ],
@@ -27,8 +28,8 @@
     "dotfiles": "Config",
     "youtube_API_DataCollection": "Prototypes",
     "speckit-live-workshop": "Learning Reference",
-    "speckit-demo": "Demo",
-    "speckit-complex-demo": "Demo",
+    "speckit-demo": "Demos",
+    "speckit-complex-demo": "Demos",
     "url-shortener-demo": "Demos",
     "java-e-grocery-store-demo": "Demos",
     "java-file-upload-demo-application": "Demos",
@@ -49,6 +50,23 @@
     "database-learning-page": "Learning Reference",
     "design-data-intensive-learning-page": "Learning Reference",
     "twitter-system-design-learning-page": "System Design",
-    "kube-self-learn": "Learning Reference"
+    "kube-self-learn": "Learning Reference",
+    "choicespecs": "Config",
+    "event-driven-java-sample": "Demos",
+    "baby-reference-learning-page": "Learning Reference",
+    "bash-reference": "Learning Reference",
+    "git-reference": "Learning Reference",
+    "caching-learning-page": "Learning Reference",
+    "hashing-cryptography-learning-page": "Learning Reference",
+    "js-ts-array-methods-practice": "Learning Reference",
+    "kafka-learning-page": "Learning Reference",
+    "kubernetes-learning-page": "Learning Reference",
+    "microservices-learning-page": "Learning Reference",
+    "credit-card-processing-system-design-learning-page": "System Design",
+    "dropbox-system-design-learning-page": "System Design",
+    "google-docs-system-design": "System Design",
+    "instagram-system-design-learning-page": "System Design",
+    "mcp-server-system-design-learning-page": "System Design",
+    "search-engine-system-design-learning-page": "System Design"
   }
 }
