@@ -1,5 +1,12 @@
 [
   {
+    "name": "choicespecssite",
+    "html_url": "https://github.com/choicespecs/choicespecssite",
+    "live_url": "https://www.choicespecs.com",
+    "description": "My personal website and portfolio",
+    "language": "Astro"
+  },
+  {
     "name": "bash-reference",
     "html_url": "https://github.com/choicespecs/bash-reference",
     "live_url": "https://choicespecs.github.io/bash-reference/",
@@ -16,6 +23,7 @@
   {
     "name": "hashing-cryptography-learning-page",
     "html_url": "https://github.com/choicespecs/hashing-cryptography-learning-page",
+    "live_url": "https://choicespecs.github.io/hashing-cryptography-learning-page/",
     "description": "A personal learning reference for hashing and cryptography — shortening strings with hashes, salting, password hashing, HMAC, encryption, and signatures, with live in-browser diagrams",
     "language": "MDX"
   },
@@ -36,6 +44,7 @@
   {
     "name": "js-ts-array-methods-practice",
     "html_url": "https://github.com/choicespecs/js-ts-array-methods-practice",
+    "live_url": "https://choicespecs.github.io/js-ts-array-methods-practice/",
     "description": "Interactive practice site for JS/TS array methods (map, filter, reduce, chaining, etc.)",
     "language": "TypeScript"
   },
@@ -63,12 +72,14 @@
   {
     "name": "credit-card-processing-system-design-learning-page",
     "html_url": "https://github.com/choicespecs/credit-card-processing-system-design-learning-page",
+    "live_url": "https://choicespecs.github.io/credit-card-processing-system-design-learning-page/",
     "description": "Interactive system design learning guide for a credit card processing system — authorization, ledger, settlement, idempotency, fraud, disputes",
     "language": "Astro"
   },
   {
     "name": "instagram-system-design-learning-page",
     "html_url": "https://github.com/choicespecs/instagram-system-design-learning-page",
+    "live_url": "https://choicespecs.github.io/instagram-system-design-learning-page/",
     "description": "Interactive system design learning guide for Instagram — media upload, feed fan-out, CDN delivery, sharding, the social graph, and engagement counters.",
     "language": "Astro"
   },
@@ -133,13 +144,6 @@
     "html_url": "https://github.com/choicespecs/url-shortener-learning-page",
     "live_url": "https://choicespecs.github.io/url-shortener-learning-page/",
     "description": "",
-    "language": "Astro"
-  },
-  {
-    "name": "choicespecssite",
-    "html_url": "https://github.com/choicespecs/choicespecssite",
-    "live_url": "https://www.choicespecs.com",
-    "description": "My personal website and portfolio",
     "language": "Astro"
   },
   {
@@ -340,6 +344,7 @@
   {
     "name": "termproject",
     "html_url": "https://github.com/choicespecs/termproject",
+    "live_url": "https://choicespecs.github.io/termproject/",
     "description": "CSCI 4800 Human Computer Interaction Term Project! Website created using html & css. Mockup and Wireframes were created using figma.",
     "language": "HTML"
   },

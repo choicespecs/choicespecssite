@@ -10,7 +10,8 @@ function normalize(rawRepos) {
         .map(r => ({
             name: r.name,
             html_url: r.html_url,
-            live_url: r.homepage || undefined,
+            // Fall back to the default Pages URL for repos with Pages enabled but no homepage set
+            live_url: r.homepage || (r.has_pages ? `https://${GITHUB_USER}.github.io/${r.name}/` : undefined),
             description: r.description || '',
             language: r.language || 'Other',
         }));
