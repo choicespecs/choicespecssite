@@ -1,5 +1,31 @@
 [
   {
+    "name": "choicespecssite",
+    "html_url": "https://github.com/choicespecs/choicespecssite",
+    "live_url": "https://www.choicespecs.com",
+    "description": "My personal website and portfolio",
+    "language": "Astro"
+  },
+  {
+    "name": "javamap",
+    "html_url": "https://github.com/choicespecs/javamap",
+    "description": "Local, offline visualizer for Java code: class dependency graph, call trees, sequence diagrams and entry points. Zero dependencies.",
+    "language": "JavaScript"
+  },
+  {
+    "name": "gitscope",
+    "html_url": "https://github.com/choicespecs/gitscope",
+    "description": "Local, offline web app for visualizing git history: commit graph, authors, diffs, blame, activity",
+    "language": "JavaScript"
+  },
+  {
+    "name": "salesforce-field-guide",
+    "html_url": "https://github.com/choicespecs/salesforce-field-guide",
+    "live_url": "https://choicespecs.github.io/salesforce-field-guide/",
+    "description": "A single-page Salesforce learning reference: data model, security, Flow, Apex, SOQL, LWC, integration, DevOps",
+    "language": "HTML"
+  },
+  {
     "name": "kubernetes-learning-page",
     "html_url": "https://github.com/choicespecs/kubernetes-learning-page",
     "live_url": "https://choicespecs.github.io/kubernetes-learning-page/",
@@ -28,19 +54,6 @@
     "language": "HTML"
   },
   {
-    "name": "gitscope",
-    "html_url": "https://github.com/choicespecs/gitscope",
-    "description": "Local, offline web app for visualizing git history: commit graph, authors, diffs, blame, activity",
-    "language": "JavaScript"
-  },
-  {
-    "name": "salesforce-field-guide",
-    "html_url": "https://github.com/choicespecs/salesforce-field-guide",
-    "live_url": "https://choicespecs.github.io/salesforce-field-guide/",
-    "description": "A single-page Salesforce learning reference: data model, security, Flow, Apex, SOQL, LWC, integration, DevOps",
-    "language": "HTML"
-  },
-  {
     "name": "baby-reference-learning-page",
     "html_url": "https://github.com/choicespecs/baby-reference-learning-page",
     "live_url": "https://choicespecs.github.io/baby-reference-learning-page/",
@@ -52,13 +65,6 @@
     "html_url": "https://github.com/choicespecs/choicespecs",
     "description": "Front page GITHUB Readme",
     "language": "Other"
-  },
-  {
-    "name": "choicespecssite",
-    "html_url": "https://github.com/choicespecs/choicespecssite",
-    "live_url": "https://www.choicespecs.com",
-    "description": "My personal website and portfolio",
-    "language": "Astro"
   },
   {
     "name": "api-playground",
