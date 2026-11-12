@@ -1,5 +1,166 @@
 [
   {
+    "name": "java-file-upload-demo-application",
+    "html_url": "https://github.com/choicespecs/java-file-upload-demo-application",
+    "description": "Secure file upload/download app in Spring Boot 3 with JWT auth, chunked large-file uploads, MIME/zip-bomb scanning, ownership checks and account lockout.",
+    "language": "Java"
+  },
+  {
+    "name": "java-e-grocery-store-demo",
+    "html_url": "https://github.com/choicespecs/java-e-grocery-store-demo",
+    "live_url": "https://choicespecs.github.io/java-e-grocery-store-demo/",
+    "description": "Spring Boot grocery store demo of a checkout saga with compensations, plus a Chaos Engineering Panel to break services mid-saga and watch the failure handling.",
+    "language": "HTML"
+  },
+  {
+    "name": "java-log-metric-system",
+    "html_url": "https://github.com/choicespecs/java-log-metric-system",
+    "live_url": "https://choicespecs.github.io/java-log-metric-system/",
+    "description": "Distributed metrics logging and aggregation pipeline using Kafka, Flink and Spring Boot, handling structured (JSON/Protobuf/Avro) and unstructured log data in real time.",
+    "language": "Java"
+  },
+  {
+    "name": "url-shortener-demo",
+    "html_url": "https://github.com/choicespecs/url-shortener-demo",
+    "live_url": "https://choicespecs.github.io/url-shortener-demo/",
+    "description": "Bitly-style URL shortener in Spring Boot 3 / Java 21 with Base62 codes, custom aliases, expiration, a Redis cache-aside layer over PostgreSQL, and Actuator monitoring.",
+    "language": "Java"
+  },
+  {
+    "name": "linkedin-helper",
+    "html_url": "https://github.com/choicespecs/linkedin-helper",
+    "description": "Chrome extension that cleans up LinkedIn job search: checks real posting dates, hides listings outside the date filter, and filters out Easy Apply and consultant posts.",
+    "language": "JavaScript"
+  },
+  {
+    "name": "regex-builder",
+    "html_url": "https://github.com/choicespecs/regex-builder",
+    "live_url": "https://choicespecs.github.io/regex-builder/",
+    "description": "Visual regex builder in React: compose patterns from starts-with/contains/ends-with, quantity and capture-group options, with a live preview, breakdown and test panel.",
+    "language": "JavaScript"
+  },
+  {
+    "name": "speckit-demo",
+    "html_url": "https://github.com/choicespecs/speckit-demo",
+    "description": "Builds the same small task list API twice, once by vibe-coding and once with GitHub spec-kit's spec-driven workflow, to show what spec-driven development buys you.",
+    "language": "Shell"
+  },
+  {
+    "name": "rag-doc-toolkit",
+    "html_url": "https://github.com/choicespecs/rag-doc-toolkit",
+    "live_url": "https://choicespecs.github.io/rag-doc-toolkit/",
+    "description": "Fully client-side RAG tool: upload notes and ask questions with sourced answers. Embedding, retrieval and generation run in the browser via Transformers.js and WebLLM.",
+    "language": "TypeScript"
+  },
+  {
+    "name": "speckit-live-workshop",
+    "html_url": "https://github.com/choicespecs/speckit-live-workshop",
+    "description": "Near-empty starter repo and facilitation script for running GitHub spec-kit's spec-driven development workflow live in front of an audience, plus a concept deck.",
+    "language": "Other"
+  },
+  {
+    "name": "rag-learning-page",
+    "html_url": "https://github.com/choicespecs/rag-learning-page",
+    "live_url": "https://choicespecs.github.io/rag-learning-page/",
+    "description": "Interactive walkthrough of how RAG works, step by step: chunking, embeddings, vector databases and query retrieval, with live in-browser demos.",
+    "language": "Shell"
+  },
+  {
+    "name": "kube-self-learn",
+    "html_url": "https://github.com/choicespecs/kube-self-learn",
+    "description": "Self-paced, hands-on Kubernetes tutorial on Minikube, from first Pod to Deployments, Services, config/secrets and a two-tier web app + MongoDB, plus CKA/CKAD-style notes.",
+    "language": "Other"
+  },
+  {
+    "name": "event-driven-java-sample",
+    "html_url": "https://github.com/choicespecs/event-driven-java-sample",
+    "description": "Minimal event-driven architecture reference in Spring Boot + Spring Kafka: one REST call publishes an order event consumed independently by three listeners.",
+    "language": "Shell"
+  },
+  {
+    "name": "dropbox-system-design-learning-page",
+    "html_url": "https://github.com/choicespecs/dropbox-system-design-learning-page",
+    "live_url": "https://choicespecs.github.io/dropbox-system-design-learning-page/",
+    "description": "Interactive system design guide for Dropbox/Google Drive: chunking and dedup, sync protocol, metadata service, block storage, change notification, conflicts and sharing.",
+    "language": "Astro"
+  },
+  {
+    "name": "twitter-system-design-learning-page",
+    "html_url": "https://github.com/choicespecs/twitter-system-design-learning-page",
+    "live_url": "https://choicespecs.github.io/twitter-system-design-learning-page/",
+    "description": "Interactive system design guide for Twitter/X: tweet ingestion, follow graph, timeline generation, caching, search, notifications and rate limiting, with clickable diagrams.",
+    "language": "Astro"
+  },
+  {
+    "name": "search-engine-system-design-learning-page",
+    "html_url": "https://github.com/choicespecs/search-engine-system-design-learning-page",
+    "live_url": "https://choicespecs.github.io/search-engine-system-design-learning-page/",
+    "description": "Interactive system design guide for a web search engine: crawling, indexing, query serving and ranking, built up from a naive design to a production-scale one.",
+    "language": "Astro"
+  },
+  {
+    "name": "url-shortener-learning-page",
+    "html_url": "https://github.com/choicespecs/url-shortener-learning-page",
+    "live_url": "https://choicespecs.github.io/url-shortener-learning-page/",
+    "description": "Interactive system design guide for a URL shortener like Bitly, walking each subsystem through Basic, Scaled and Advanced tiers with clickable architecture diagrams.",
+    "language": "Astro"
+  },
+  {
+    "name": "google-docs-system-design",
+    "html_url": "https://github.com/choicespecs/google-docs-system-design",
+    "live_url": "https://choicespecs.github.io/google-docs-system-design/",
+    "description": "Interactive system design guide for a real-time collaborative editor like Google Docs: OT vs. CRDTs, sync and fan-out, versioning, presence/cursors, comments and permissions.",
+    "language": "Astro"
+  },
+  {
+    "name": "kafka-learning-page",
+    "html_url": "https://github.com/choicespecs/kafka-learning-page",
+    "live_url": "https://choicespecs.github.io/kafka-learning-page/",
+    "description": "Interactive Apache Kafka guide: the log, partitioning and ordering, brokers and replication, producers/consumers, consumer groups and rebalancing, delivery semantics, retention.",
+    "language": "TypeScript"
+  },
+  {
+    "name": "caching-learning-page",
+    "html_url": "https://github.com/choicespecs/caching-learning-page",
+    "live_url": "https://choicespecs.github.io/caching-learning-page/",
+    "description": "Interactive caching guide: hit ratio and TTL, eviction policies, invalidation and stampedes, caching strategies, placement/topology, Redis deep dive and distributed caching.",
+    "language": "MDX"
+  },
+  {
+    "name": "design-data-intensive-learning-page",
+    "html_url": "https://github.com/choicespecs/design-data-intensive-learning-page",
+    "live_url": "https://choicespecs.github.io/design-data-intensive-learning-page/",
+    "description": "Chapter-by-chapter interactive study guide to Designing Data-Intensive Applications, with diagrams for replication, partitioning, transactions, consensus, and batch/stream processing.",
+    "language": "MDX"
+  },
+  {
+    "name": "api-playground",
+    "html_url": "https://github.com/choicespecs/api-playground",
+    "description": "Lightweight Postman-style HTTP client in Go that runs as a native macOS app or from the terminal, with collections, variables and auth profiles, proxied locally to avoid CORS.",
+    "language": "HTML"
+  },
+  {
+    "name": "database-learning-page",
+    "html_url": "https://github.com/choicespecs/database-learning-page",
+    "live_url": "https://choicespecs.github.io/database-learning-page/",
+    "description": "Interactive database fundamentals guide with diagrams: ACID transactions, isolation levels, indexing, normalization, relationships, partitioning, replication and storage engines.",
+    "language": "MDX"
+  },
+  {
+    "name": "baby-reference-learning-page",
+    "html_url": "https://github.com/choicespecs/baby-reference-learning-page",
+    "live_url": "https://choicespecs.github.io/baby-reference-learning-page/",
+    "description": "Searchable newborn-care reference: cord care, swaddling, feeding, burping, jaundice and safe sleep, with links and videos from AAP and hospital sources.",
+    "language": "JavaScript"
+  },
+  {
+    "name": "kubernetes-learning-page",
+    "html_url": "https://github.com/choicespecs/kubernetes-learning-page",
+    "live_url": "https://choicespecs.github.io/kubernetes-learning-page/",
+    "description": "Interactive Kubernetes reference: clickable cluster diagram, component encyclopedia with YAML, kubectl cheat sheet, hands-on tutorial and troubleshooting guide.",
+    "language": "JavaScript"
+  },
+  {
     "name": "choicespecssite",
     "html_url": "https://github.com/choicespecs/choicespecssite",
     "live_url": "https://www.choicespecs.com",
@@ -26,13 +187,6 @@
     "language": "HTML"
   },
   {
-    "name": "kubernetes-learning-page",
-    "html_url": "https://github.com/choicespecs/kubernetes-learning-page",
-    "live_url": "https://choicespecs.github.io/kubernetes-learning-page/",
-    "description": "",
-    "language": "JavaScript"
-  },
-  {
     "name": "git-reference",
     "html_url": "https://github.com/choicespecs/git-reference",
     "live_url": "https://choicespecs.github.io/git-reference/",
@@ -54,23 +208,10 @@
     "language": "HTML"
   },
   {
-    "name": "baby-reference-learning-page",
-    "html_url": "https://github.com/choicespecs/baby-reference-learning-page",
-    "live_url": "https://choicespecs.github.io/baby-reference-learning-page/",
-    "description": "",
-    "language": "JavaScript"
-  },
-  {
     "name": "choicespecs",
     "html_url": "https://github.com/choicespecs/choicespecs",
     "description": "Front page GITHUB Readme",
     "language": "Other"
-  },
-  {
-    "name": "api-playground",
-    "html_url": "https://github.com/choicespecs/api-playground",
-    "description": "",
-    "language": "HTML"
   },
   {
     "name": "db-doctor",
@@ -114,13 +255,6 @@
     "language": "TypeScript"
   },
   {
-    "name": "database-learning-page",
-    "html_url": "https://github.com/choicespecs/database-learning-page",
-    "live_url": "https://choicespecs.github.io/database-learning-page/",
-    "description": "",
-    "language": "MDX"
-  },
-  {
     "name": "credit-card-processing-system-design-learning-page",
     "html_url": "https://github.com/choicespecs/credit-card-processing-system-design-learning-page",
     "live_url": "https://choicespecs.github.io/credit-card-processing-system-design-learning-page/",
@@ -135,104 +269,10 @@
     "language": "Astro"
   },
   {
-    "name": "design-data-intensive-learning-page",
-    "html_url": "https://github.com/choicespecs/design-data-intensive-learning-page",
-    "live_url": "https://choicespecs.github.io/design-data-intensive-learning-page/",
-    "description": "",
-    "language": "MDX"
-  },
-  {
-    "name": "caching-learning-page",
-    "html_url": "https://github.com/choicespecs/caching-learning-page",
-    "live_url": "https://choicespecs.github.io/caching-learning-page/",
-    "description": "",
-    "language": "MDX"
-  },
-  {
-    "name": "kafka-learning-page",
-    "html_url": "https://github.com/choicespecs/kafka-learning-page",
-    "live_url": "https://choicespecs.github.io/kafka-learning-page/",
-    "description": "",
-    "language": "TypeScript"
-  },
-  {
-    "name": "dropbox-system-design-learning-page",
-    "html_url": "https://github.com/choicespecs/dropbox-system-design-learning-page",
-    "live_url": "https://choicespecs.github.io/dropbox-system-design-learning-page/",
-    "description": "",
-    "language": "Astro"
-  },
-  {
-    "name": "search-engine-system-design-learning-page",
-    "html_url": "https://github.com/choicespecs/search-engine-system-design-learning-page",
-    "live_url": "https://choicespecs.github.io/search-engine-system-design-learning-page/",
-    "description": "",
-    "language": "Astro"
-  },
-  {
-    "name": "twitter-system-design-learning-page",
-    "html_url": "https://github.com/choicespecs/twitter-system-design-learning-page",
-    "live_url": "https://choicespecs.github.io/twitter-system-design-learning-page/",
-    "description": "",
-    "language": "Astro"
-  },
-  {
-    "name": "google-docs-system-design",
-    "html_url": "https://github.com/choicespecs/google-docs-system-design",
-    "live_url": "https://choicespecs.github.io/google-docs-system-design/",
-    "description": "",
-    "language": "Astro"
-  },
-  {
-    "name": "url-shortener-learning-page",
-    "html_url": "https://github.com/choicespecs/url-shortener-learning-page",
-    "live_url": "https://choicespecs.github.io/url-shortener-learning-page/",
-    "description": "",
-    "language": "Astro"
-  },
-  {
-    "name": "event-driven-java-sample",
-    "html_url": "https://github.com/choicespecs/event-driven-java-sample",
-    "description": "",
-    "language": "Shell"
-  },
-  {
-    "name": "kube-self-learn",
-    "html_url": "https://github.com/choicespecs/kube-self-learn",
-    "description": "",
-    "language": "Other"
-  },
-  {
-    "name": "rag-learning-page",
-    "html_url": "https://github.com/choicespecs/rag-learning-page",
-    "live_url": "https://choicespecs.github.io/rag-learning-page/",
-    "description": "",
-    "language": "Shell"
-  },
-  {
-    "name": "speckit-live-workshop",
-    "html_url": "https://github.com/choicespecs/speckit-live-workshop",
-    "description": "",
-    "language": "Other"
-  },
-  {
-    "name": "rag-doc-toolkit",
-    "html_url": "https://github.com/choicespecs/rag-doc-toolkit",
-    "live_url": "https://choicespecs.github.io/rag-doc-toolkit/",
-    "description": "",
-    "language": "TypeScript"
-  },
-  {
     "name": "claude-folder",
     "html_url": "https://github.com/choicespecs/claude-folder",
     "description": "What I use for my .claude folder",
     "language": "JavaScript"
-  },
-  {
-    "name": "speckit-demo",
-    "html_url": "https://github.com/choicespecs/speckit-demo",
-    "description": "",
-    "language": "Shell"
   },
   {
     "name": "speckit-complex-demo",
@@ -260,50 +300,10 @@
     "language": "JavaScript"
   },
   {
-    "name": "regex-builder",
-    "html_url": "https://github.com/choicespecs/regex-builder",
-    "live_url": "https://choicespecs.github.io/regex-builder/",
-    "description": "",
-    "language": "JavaScript"
-  },
-  {
-    "name": "linkedin-helper",
-    "html_url": "https://github.com/choicespecs/linkedin-helper",
-    "description": "",
-    "language": "JavaScript"
-  },
-  {
-    "name": "url-shortener-demo",
-    "html_url": "https://github.com/choicespecs/url-shortener-demo",
-    "live_url": "https://choicespecs.github.io/url-shortener-demo/",
-    "description": "",
-    "language": "Java"
-  },
-  {
-    "name": "java-log-metric-system",
-    "html_url": "https://github.com/choicespecs/java-log-metric-system",
-    "live_url": "https://choicespecs.github.io/java-log-metric-system/",
-    "description": "",
-    "language": "Java"
-  },
-  {
-    "name": "java-e-grocery-store-demo",
-    "html_url": "https://github.com/choicespecs/java-e-grocery-store-demo",
-    "live_url": "https://choicespecs.github.io/java-e-grocery-store-demo/",
-    "description": "",
-    "language": "HTML"
-  },
-  {
     "name": "youtube-transcript-tool",
     "html_url": "https://github.com/choicespecs/youtube-transcript-tool",
     "description": "This is an easier youtube transcript too without the ads and other crap",
     "language": "CSS"
-  },
-  {
-    "name": "java-file-upload-demo-application",
-    "html_url": "https://github.com/choicespecs/java-file-upload-demo-application",
-    "description": "",
-    "language": "Java"
   },
   {
     "name": "java-aws-sam-application",
